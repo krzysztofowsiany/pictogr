@@ -75,7 +75,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SplashScreen\ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="SplashScreen\Views\SplashScreenView.xaml.cs">
       <DependentUpon>SplashScreenView.xaml</DependentUpon>
@@ -110,7 +109,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PictOgr.Core\PictOgr.Core.csproj">
+      <Project>{fb3f2135-6255-4c60-ab53-2272a23ba778}</Project>
+      <Name>PictOgr.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
