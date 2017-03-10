@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\CQRS\CommandTest.cs" />
+    <Compile Include="Core\CQRS\QueryTest.cs" />
+    <Compile Include="Core\CQRS\query_bus_test.cs" />
     <Compile Include="Core\CQRS\command_bus_test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

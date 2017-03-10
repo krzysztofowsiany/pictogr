@@ -8,8 +8,8 @@ namespace PictOgr.Core.CQRS
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new CommandBus(c)).As<ICommandBus>().SingleInstance();
-            builder.Register(c => new QueryBus(c)).As<IQueryBus>().SingleInstance();
+            builder.Register(c => new CommandBus(c)).AsSelf().As<ICommandBus>().SingleInstance();
+            builder.Register(c => new QueryBus(c)).AsSelf().As<IQueryBus>().SingleInstance();
         }
     }
 }

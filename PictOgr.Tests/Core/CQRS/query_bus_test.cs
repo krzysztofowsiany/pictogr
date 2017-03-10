@@ -5,14 +5,15 @@ using Shouldly;
 using FakeItEasy;
 using PictOgr.Core.AutoFac;
 using PictOgr.Core.CQRS.Command;
+using PictOgr.Core.CQRS.Query;
 
 namespace PictOgr.Tests.Core.CQRS
 {
-	public class command_bus_test
+	public class query_bus_test
 	{
 		private IContainer container;
 
-		public command_bus_test()
+		public query_bus_test()
 		{
 			container = Container.CreateBuilder().Build();
 		}
@@ -24,26 +25,26 @@ namespace PictOgr.Tests.Core.CQRS
 			using (var scope = container.BeginLifetimeScope())
 			{
 				//Act
-				var command_bus = scope.Resolve<ICommandBus>();
+				var query_bus = scope.Resolve<IQueryBus>();
 
 				//Assert
-				command_bus.ShouldBeOfType<CommandBus>();
+				query_bus.ShouldBeOfType<QueryBus>();
 			}
 		}
 
 		[Fact]
-		public void test_simple_test_command_throw_exception()
+		public void test_simple_test_query_throw_exception()
 		{
 			//Arragne
 			using (var scope = container.BeginLifetimeScope())
 			{
 				//Act
-				var command_bus = scope.Resolve<ICommandBus>();
+				var query_bus = scope.Resolve<IQueryBus>();
 
 				//Assert
 				Should.Throw<Exception>(() =>
 				{
-					command_bus.SendCommand(new CommandTest());
+					query_bus.Process<QueryTest, int>(new QueryTest());
 				});
 			}
 		}
