@@ -4,5 +4,6 @@
         Title="MainWindow" Height="350" Width="525">
     <StackPanel>
         <Label Content="TEST"/>
+        <Button Command="{Binding MessageBoxCommand}">asdfasdf</Button>
     </StackPanel>
 </Window>

@@ -2,24 +2,26 @@
 
 namespace PictOgr.Core.CQRS.Query
 {
-    public class QueryBus:IQueryBus
+    public class QueryBus// : IQueryBus
     {
         public QueryBus()
         {
         }
+        /*
+                public TResult Process<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
+                {
+                   /* var queryHandle = resolver.ResolveOptional<IQueryHandler<TQuery, TResult>>();
 
-        public TResult Process<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
-        {
-            var queryHandle = resolver.ResolveOptional<IQueryHandler<TQuery, TResult>>();
-
-            if (queryHandle != null)
-            {
-                return queryHandle.Execute(query);
-            }
-
-
+                    if (queryHandle != null)
+                    {
+                        return queryHandle.Execute(query);
+                    }*/
 
 
-        }
+        // return TResult();
+
+
+
     }
+
 }
