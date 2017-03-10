@@ -6,10 +6,9 @@ using Autofac.Core;
 
 namespace PictOgr.Core.AutoFac
 {
-    public class Container
+    public static class Container
     {
-
-        private static ContainerBuilder CreateBuilder()
+        public static ContainerBuilder CreateBuilder()
         {
             var builder = new ContainerBuilder();
 

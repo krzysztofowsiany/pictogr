@@ -17,12 +17,12 @@ namespace PictOgr.Core.CQRS.Command
             if (command == null)
                 return;
 
-            var commandHandler = resolveEventArgs.ResolveOptional<ICommandHandler<TCommand>>();
+          /*  var commandHandler = resolveEventArgs.ResolveOptional<ICommandHandler<TCommand>>();
             if (commandHandler == null)
                 return;
 
             commandHandler.Handle(cmd);
-
+            */
         }
     }
 }

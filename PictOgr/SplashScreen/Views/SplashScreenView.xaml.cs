@@ -8,10 +8,11 @@ namespace PictOgr.SplashScreen.Views
     /// </summary>
     public partial class SplashScreenView : Window
     {
-        public SplashScreenView()
+        public SplashScreenView(SplashScreenViewModel splasg_screen_view_model)
         {
+            this.DataContext = splasg_screen_view_model;
+
             InitializeComponent();
-            this.DataContext = new SplashScreenViewModel();
         }
     }
 }
