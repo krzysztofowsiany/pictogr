@@ -5,24 +5,28 @@ namespace PictOgr.Core.CQRS.Command
 {
     public class CommandBus : ICommandBus
     {
+        private readonly IComponentContext container;
 
-
-        public CommandBus()
+        public CommandBus(IComponentContext container)
         {
-
+            this.container = container;
         }
 
         public void SendCommand<TCommand>(TCommand command) where TCommand : ICommand
         {
             if (command == null)
-                return;
+            {
+                throw new ArgumentNullException(nameof(command));
+            }
 
-          /*  var commandHandler = resolveEventArgs.ResolveOptional<ICommandHandler<TCommand>>();
-            if (commandHandler == null)
-                return;
+            var command_handler = container.ResolveOptional<ICommandHandler<TCommand>>();
 
-            commandHandler.Handle(cmd);
-            */
+            if (command_handler == null)
+            {
+                throw new Exception($"Not found handler for Command: '{command.GetType().FullName}'");
+            }
+
+            command_handler.Handle(command);
         }
     }
 }

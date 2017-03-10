@@ -1,27 +1,27 @@
-﻿using System.ComponentModel;
+﻿using System;
+using Autofac;
 
 namespace PictOgr.Core.CQRS.Query
 {
-    public class QueryBus// : IQueryBus
+    public class QueryBus : IQueryBus
     {
-        public QueryBus()
+        private readonly IComponentContext container;
+
+        public QueryBus(IComponentContext container)
         {
+            this.container = container;
         }
-        /*
-                public TResult Process<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
-                {
-                   /* var queryHandle = resolver.ResolveOptional<IQueryHandler<TQuery, TResult>>();
 
-                    if (queryHandle != null)
-                    {
-                        return queryHandle.Execute(query);
-                    }*/
+        public TResult Process<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
+        {
+            var queryHandle = container.Resolve<IQueryHandler<TQuery, TResult>>();
 
+            if (queryHandle == null)
+            {
+                throw new Exception($"Not found handler for Query: '{query.GetType().FullName}'");
+            }
 
-        // return TResult();
-
-
-
+            return queryHandle.Execute(query);
+        }
     }
-
 }

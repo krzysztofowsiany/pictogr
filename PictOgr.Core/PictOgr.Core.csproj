@@ -54,6 +54,7 @@
     <Compile Include="CQRS\Query\IQueryBus.cs" />
     <Compile Include="CQRS\Query\IQueryHandler.cs" />
     <Compile Include="CQRS\Query\QueryBus.cs" />
+    <Compile Include="CQRS\CQRSModule.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
