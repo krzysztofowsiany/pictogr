@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,8 +45,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="CQRS\Command\CommandBus.cs" />
+    <Compile Include="CQRS\Command\ICommand.cs" />
+    <Compile Include="CQRS\Command\ICommandBus.cs" />
+    <Compile Include="CQRS\Command\ICommandHandler.cs" />
+    <Compile Include="CQRS\Query\IQuery.cs" />
+    <Compile Include="CQRS\Query\IQueryBus.cs" />
+    <Compile Include="CQRS\Query\IQueryHandler.cs" />
+    <Compile Include="CQRS\Query\QueryBus.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
