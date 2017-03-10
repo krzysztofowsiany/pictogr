@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CQRS\CommandTest.cs" />
     <Compile Include="Core\CQRS\command_bus_test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
