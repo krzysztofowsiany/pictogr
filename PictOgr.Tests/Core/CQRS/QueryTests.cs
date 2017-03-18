@@ -1,9 +1,11 @@
 ﻿using Autofac;
 using PictOgr.Core;
 using PictOgr.Core.AutoFac;
+using PictOgr.Core.CQRS.Bus;
 using Xunit;
 using Shouldly;
 using PictOgr.Core.CQRS.Query;
+using PictOgr.Core.Models;
 using PictOgr.Core.Queries;
 using PictOgr.Tests.Core.CQRS.Queries;
 

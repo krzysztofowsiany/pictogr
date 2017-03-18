@@ -1,25 +1,28 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using PictOgr.Core.CQRS.Query;
+using Autofac.Extras.NLog;
+using PictOgr.Core.CQRS.Bus;
 using PictOgr.Core.Properties;
 
 namespace PictOgr.Core
 {
 	public class BaseViewModel : INotifyPropertyChanged
 	{
-		protected readonly IQueryBus queryBus;
+		protected readonly IQueryBus QueryBus;
+		protected readonly ILogger Logger;
 
-		public BaseViewModel(IQueryBus queryBus)
+		public BaseViewModel(IQueryBus queryBus, ILogger logger)
 		{
-			this.queryBus = queryBus;
+			QueryBus = queryBus;
+			Logger = logger;
 		}
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		[NotifyPropertyChangedInvocator]
-		protected virtual void OnPropertyChanged([CallerMemberName] string property_name = null)
+		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property_name));
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using Autofac;
 using PictOgr.Core.AutoFac;
+using PictOgr.Core.CQRS.Bus;
 using Xunit;
 using Shouldly;
 using PictOgr.Core.CQRS.Query;
