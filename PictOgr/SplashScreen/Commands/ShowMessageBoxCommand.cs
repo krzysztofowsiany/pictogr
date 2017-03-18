@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using PictOgr.Core.CQRS.Bus;
 using PictOgr.Core.CQRS.Command;
 using ICommand = System.Windows.Input.ICommand;
 

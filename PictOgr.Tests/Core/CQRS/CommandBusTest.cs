@@ -1,9 +1,9 @@
 ﻿using System;
 using Autofac;
 using PictOgr.Core.AutoFac;
+using PictOgr.Core.CQRS.Bus;
 using Xunit;
 using Shouldly;
-using PictOgr.Core.CQRS.Command;
 using PictOgr.Tests.Core.CQRS.Commands;
 
 namespace PictOgr.Tests.Core.CQRS

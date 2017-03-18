@@ -1,4 +1,4 @@
-﻿namespace PictOgr.Core
+﻿namespace PictOgr.Core.Models
 {
 	public class ApplicationInformation
 	{

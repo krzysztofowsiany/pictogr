@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using PictOgr.Core.CQRS.Bus;
 using PictOgr.Core.CQRS.Command;
 using PictOgr.Core.CQRS.Query;
 using Module = Autofac.Module;

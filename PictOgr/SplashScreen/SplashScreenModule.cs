@@ -10,12 +10,8 @@ namespace PictOgr.SplashScreen
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<ShowMessageBoxCommand>();
-
-
             builder.RegisterType<SplashScreenViewModel>();
             builder.RegisterType<SplashScreenView>();
-            
-            
         }
     }
 }

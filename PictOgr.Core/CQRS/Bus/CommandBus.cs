@@ -1,15 +1,19 @@
 ﻿using System;
 using Autofac;
+using Autofac.Extras.NLog;
+using PictOgr.Core.CQRS.Command;
 
-namespace PictOgr.Core.CQRS.Command
+namespace PictOgr.Core.CQRS.Bus
 {
 	public class CommandBus : ICommandBus
 	{
 		private readonly ILifetimeScope container;
+		private readonly ILogger logger;
 
-		public CommandBus(ILifetimeScope container)
+		public CommandBus(ILifetimeScope container, ILogger logger)
 		{
 			this.container = container;
+			this.logger = logger;
 		}
 
 		public void SendCommand<TCommand>(TCommand command) where TCommand : ICommand
@@ -26,7 +30,14 @@ namespace PictOgr.Core.CQRS.Command
 				throw new Exception($"Not found handler for Command: '{command.GetType().FullName}'");
 			}
 
-			commandHandler.Handle(command);
+			try
+			{
+				commandHandler.Handle(command);
+			}
+			catch (Exception e)
+			{
+				logger.Error(e);
+			}
 		}
 	}
 }
