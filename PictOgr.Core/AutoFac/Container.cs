@@ -12,7 +12,7 @@ namespace PictOgr.Core.AutoFac
         {
             var builder = new ContainerBuilder();
 
-            LoadDLLs();
+           // LoadDLLs();
 
             LoadModules(builder);
 

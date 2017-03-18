@@ -2,7 +2,7 @@
 
 namespace PictOgr.Tests.Core.CQRS
 {
-	internal class QueryTest : IQuery<int>
-	{
-	}
+    public class QueryTest : IQuery<int>
+    {
+    }
 }
