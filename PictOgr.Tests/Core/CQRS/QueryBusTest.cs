@@ -1,38 +1,41 @@
 ﻿using System;
 using Autofac;
+using PictOgr.Core.AutoFac;
 using Xunit;
 using Shouldly;
-using PictOgr.Core.CQRS;
-using PictOgr.Core.CQRS.Command;
 using PictOgr.Core.CQRS.Query;
 
 namespace PictOgr.Tests.Core.CQRS
 {
-    public class QueryBusTest
-    {
-        private IContainer container;
+	public class QueryBusTest
+	{
+		private readonly IContainer container;
 
-        public QueryBusTest()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterModule<CQRSModule>();
-            container = builder.Build();
-        }
+		public QueryBusTest()
+		{
+			container = Container.CreateBuilder().Build();
+		}
 
-        [Fact]
-        public void test_query_bus_are_correct_resolved()
-        {
-            using (var scope = container.BeginLifetimeScope())
-            {
-                var query_bus = scope.Resolve<IQueryBus>();
+		[Fact]
+		public void test_query_bus_are_correct_resolved()
+		{
+			using (var scope = container.BeginLifetimeScope())
+			{
+				var queryBus = scope.Resolve<IQueryBus>();
 
-                query_bus.ShouldBeOfType<QueryBus>();
+				queryBus.ShouldBeOfType<QueryBus>();
 
-                Should.Throw<Exception>(() =>
-                {
-                    query_bus.Process<QueryTest, int>(new QueryTest());
-                });
-            }
-        }
-    }
+				Should.Throw<Exception>(() =>
+				{
+					queryBus.Process<QueryTestNotInContainer, int>(new QueryTestNotInContainer());
+				});
+			}
+		}
+
+		internal class QueryTestNotInContainer : IQuery<int>
+		{
+		}
+	}
 }
+
+	

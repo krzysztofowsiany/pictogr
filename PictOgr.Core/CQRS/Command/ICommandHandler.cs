@@ -1,7 +1,11 @@
 ﻿namespace PictOgr.Core.CQRS.Command
 {
-    public interface ICommandHandler<in TCommand> where TCommand : ICommand
-    {
-        void Handle(TCommand command);
-    }
+	public interface ICommandHandler
+	{
+	}
+
+	public interface ICommandHandler<in TCommand> : ICommandHandler where TCommand : ICommand
+	{
+		void Handle(TCommand command);
+	}
 }
