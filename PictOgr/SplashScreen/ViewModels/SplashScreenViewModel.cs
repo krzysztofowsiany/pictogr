@@ -1,19 +1,26 @@
 ﻿
 using System.Windows.Input;
 using PictOgr.Core;
+using PictOgr.Core.CQRS.Query;
+using PictOgr.Core.Queries;
 using PictOgr.SplashScreen.Commands;
 
 namespace PictOgr.SplashScreen.ViewModels
 {
-    public class SplashScreenViewModel : BaseViewModel
-    {
-        private ShowMessageBoxCommand message_box_command;
+	public class SplashScreenViewModel : BaseViewModel
+	{
+		private readonly ShowMessageBoxCommand messageBoxCommand;
 
-        public ICommand MessageBoxCommand => message_box_command;
+		public ApplicationInformation ApplicationInformation { get; private set; }
 
-        public SplashScreenViewModel(ShowMessageBoxCommand message_box_command)
-        {
-            this.message_box_command = message_box_command;
-        }
-    }
+		public ICommand MessageBoxCommand => messageBoxCommand;
+
+
+		public SplashScreenViewModel(ShowMessageBoxCommand messageBoxCommand, IQueryBus queryBus) : base(queryBus)
+		{
+			this.messageBoxCommand = messageBoxCommand;
+
+			ApplicationInformation = queryBus.Process<GetApplicationInformation, ApplicationInformation>(new GetApplicationInformation());
+		}
+	}
 }

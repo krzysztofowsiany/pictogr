@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationInformation.cs" />
     <Compile Include="AutoFac\Container.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="CQRS\Command\CommandBus.cs" />
@@ -57,9 +58,14 @@
     <Compile Include="CQRS\CQRSModule.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\GetApplicationInformation.cs" />
+    <Compile Include="Queries\GetApplicationInformationHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

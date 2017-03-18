@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -10,7 +9,7 @@ using System.Windows;
 [assembly: AssemblyTitle("PictOgr")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GemuStudio")]
+[assembly: AssemblyCompany("GemuStudio Krzysztof Owsiany")]
 [assembly: AssemblyProduct("PictOgr")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
@@ -51,8 +50,14 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+#if DEBUG
+[assembly: AssemblyVersion("0.1.*")]
+[assembly: AssemblyFileVersion("0.1.*")]
+#else
+[assembly: AssemblyVersion("0.0.1")]
+[assembly: AssemblyFileVersion("0.0.1")]
+#endif
+
 [assembly: NeutralResourcesLanguage("en")]
 [assembly: Guid("411C4521-D04B-4414-B323-2CD81B8354A1")]
 

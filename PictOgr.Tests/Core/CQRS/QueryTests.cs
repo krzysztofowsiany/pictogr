@@ -1,39 +1,45 @@
-﻿using System;
-using Autofac;
+﻿using Autofac;
+using PictOgr.Core;
+using PictOgr.Core.AutoFac;
 using Xunit;
 using Shouldly;
-using PictOgr.Core.CQRS;
 using PictOgr.Core.CQRS.Query;
+using PictOgr.Core.Queries;
+using PictOgr.Tests.Core.CQRS.Queries;
 
 namespace PictOgr.Tests.Core.CQRS
 {
-    public class QueryTests
-    {
-        private IContainer container;
-        private IQueryBus query_bus;
+	public class QueryTests
+	{
+		private readonly IQueryBus queryBus;
 
-        public QueryTests()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterModule<CQRSModule>();
-            builder.RegisterModule<TestsModule>();
-            container = builder.Build();
+		public QueryTests()
+		{
+			var container = Container.CreateBuilder().Build();
 
-            using (var scope = container.BeginLifetimeScope())
-            {
-                query_bus = scope.Resolve<IQueryBus>();
-            }
-        }
+			using (var scope = container.BeginLifetimeScope())
+			{
+				queryBus = scope.Resolve<IQueryBus>();
+			}
+		}
 
-        [Fact]
-        public void test_query_bus_are_correct_resolved()
-        {
-            var test = new QueryTest();
-            var result = query_bus.Process<QueryTest, int>(test);
+		[Fact]
+		public void test_query_bus_are_correct_resolved()
+		{
+			var value = 220;
+			var result = queryBus.Process<QueryTestClass, int>(new QueryTestClass(value));
 
+			result.ShouldBe(value);
+		}
 
-            result.ShouldBe(0);
+		[Fact]
+		public void test_query_application_information()
+		{
+			var applicationInfo =
+				queryBus.Process<GetApplicationInformation, ApplicationInformation>(new GetApplicationInformation());
 
-        }
-    }
+			applicationInfo.Version.ShouldNotBeNull();
+			applicationInfo.Version.ShouldNotBeEmpty();
+		}
+	}
 }
