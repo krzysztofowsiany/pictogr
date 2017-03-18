@@ -1,7 +1,6 @@
 ﻿
 using System.Windows.Input;
 using Autofac.Extras.NLog;
-using NLog.Fluent;
 using PictOgr.Core;
 using PictOgr.Core.CQRS.Bus;
 using PictOgr.Core.Models;
@@ -12,15 +11,15 @@ namespace PictOgr.SplashScreen.ViewModels
 {
 	public class SplashScreenViewModel : BaseViewModel
 	{
-		private readonly ShowMessageBoxCommand messageBoxCommand;
+		private readonly ExitBoxCommand exitBoxCommand;
 
 		public ApplicationInformation ApplicationInformation { get; private set; }
 
-		public ICommand MessageBoxCommand => messageBoxCommand;
+		public ICommand ExitBoxCommand => exitBoxCommand;
 
-		public SplashScreenViewModel(ShowMessageBoxCommand messageBoxCommand, IQueryBus queryBus, ILogger logger) : base(queryBus, logger)
+		public SplashScreenViewModel(ExitBoxCommand exitBoxCommand, IQueryBus queryBus, ILogger logger) : base(queryBus, logger)
 		{
-			this.messageBoxCommand = messageBoxCommand;
+			this.exitBoxCommand = exitBoxCommand;
 
 			Initialize();
 		}

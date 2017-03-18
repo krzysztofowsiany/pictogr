@@ -83,13 +83,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SplashScreen\Commands\ShowMessageBoxCommand.cs" />
+    <Compile Include="SplashScreen\Commands\ExitBoxCommand.cs" />
     <Compile Include="SplashScreen\SplashScreenModule.cs" />
     <Compile Include="SplashScreen\ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="SplashScreen\Views\SplashScreenView.xaml.cs">
       <DependentUpon>SplashScreenView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Style\Style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
