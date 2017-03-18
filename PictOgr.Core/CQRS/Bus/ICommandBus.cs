@@ -2,8 +2,8 @@
 
 namespace PictOgr.Core.CQRS.Bus
 {
-    public interface ICommandBus
-    {
-        void SendCommand<TCommand>(TCommand command) where TCommand : ICommand;
-    }
+	public interface ICommandBus
+	{
+		void SendCommand<TCommand>(TCommand command) where TCommand : ICommand;
+	}
 }

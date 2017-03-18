@@ -5,13 +5,13 @@ using PictOgr.SplashScreen.Views;
 
 namespace PictOgr.SplashScreen
 {
-    public class SplashScreenModule : Module
-    {
-        protected override void Load(ContainerBuilder builder)
-        {
-            builder.RegisterType<ShowMessageBoxCommand>();
-            builder.RegisterType<SplashScreenViewModel>();
-            builder.RegisterType<SplashScreenView>();
-        }
-    }
+	public class SplashScreenModule : Module
+	{
+		protected override void Load(ContainerBuilder builder)
+		{
+			builder.RegisterType<ExitBoxCommand>();
+			builder.RegisterType<SplashScreenViewModel>();
+			builder.RegisterType<SplashScreenView>();
+		}
+	}
 }
