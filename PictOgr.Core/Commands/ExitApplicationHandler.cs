@@ -3,7 +3,7 @@ using PictOgr.Core.CQRS.Command;
 
 namespace PictOgr.Core.Commands
 {
-	public class ExitApplicationHandler : ICommandHandler<ExitCommand>
+	public class ExitApplicationHandler : ICommandHandler<ExitApplication>
 	{
 		private readonly ILogger logger;
 
@@ -12,7 +12,7 @@ namespace PictOgr.Core.Commands
 			this.logger = logger;
 		}
 
-		public void Handle(ExitCommand command)
+		public void Handle(ExitApplication command)
 		{
 			logger.Info("Exit application.");
 			System.Environment.Exit(command.ExitCode);

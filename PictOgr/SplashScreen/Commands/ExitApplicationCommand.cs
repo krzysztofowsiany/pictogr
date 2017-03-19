@@ -5,11 +5,11 @@ using ICommand = System.Windows.Input.ICommand;
 
 namespace PictOgr.SplashScreen.Commands
 {
-	public class ExitBoxCommand : ICommand
+	public class ExitApplicationCommand : ICommand
 	{
 		private readonly ICommandBus commandBus;
 
-		public ExitBoxCommand(ICommandBus commandBus)
+		public ExitApplicationCommand(ICommandBus commandBus)
 		{
 			this.commandBus = commandBus;
 		}
@@ -21,7 +21,7 @@ namespace PictOgr.SplashScreen.Commands
 
 		public void Execute(object parameter)
 		{
-			commandBus.SendCommand<ExitCommand>(new ExitCommand(0));
+			commandBus.SendCommand<ExitApplication>(new ExitApplication(0));
 		}
 
 		public event EventHandler CanExecuteChanged;
