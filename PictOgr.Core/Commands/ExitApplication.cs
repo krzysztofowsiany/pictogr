@@ -2,9 +2,9 @@
 
 namespace PictOgr.Core.Commands
 {
-	public class ExitCommand:ICommand
+	public class ExitApplication:ICommand
 	{
-		public ExitCommand(int exitCode)
+		public ExitApplication(int exitCode)
 		{
 			ExitCode = exitCode;
 		}

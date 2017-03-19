@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using PictOgr.SplashScreen.ViewModels;
 
 namespace PictOgr.SplashScreen.Views
@@ -11,6 +12,11 @@ namespace PictOgr.SplashScreen.Views
 		public SplashScreenView(SplashScreenViewModel splashScreenViewModel)
 		{
 			this.DataContext = splashScreenViewModel;
+
+			splashScreenViewModel.RequestClose += (object sender, EventArgs args) =>
+			{
+				this.Close();
+			};
 
 			InitializeComponent();
 		}

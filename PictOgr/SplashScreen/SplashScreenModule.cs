@@ -9,7 +9,8 @@ namespace PictOgr.SplashScreen
 	{
 		protected override void Load(ContainerBuilder builder)
 		{
-			builder.RegisterType<ExitBoxCommand>();
+			builder.RegisterType<ExitApplicationCommand>();
+			builder.RegisterType<StartApplicationCommand>();
 			builder.RegisterType<SplashScreenViewModel>();
 			builder.RegisterType<SplashScreenView>();
 		}
