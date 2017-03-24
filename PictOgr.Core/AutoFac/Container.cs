@@ -12,7 +12,7 @@ namespace PictOgr.Core.AutoFac
         {
             var builder = new ContainerBuilder();
 
-           // LoadDLLs();
+            // LoadDLLs();
 
             LoadModules(builder);
 
@@ -35,7 +35,7 @@ namespace PictOgr.Core.AutoFac
 
             foreach (var type in types)
             {
-                builder.RegisterModule((IModule) Activator.CreateInstance(type));
+                builder.RegisterModule((IModule)Activator.CreateInstance(type));
             }
         }
     }

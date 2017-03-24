@@ -7,44 +7,43 @@ using Module = Autofac.Module;
 
 namespace PictOgr.Core.CQRS
 {
-	public class CQRSModule : Module
-	{
-		protected override void Load(ContainerBuilder builder)
-		{
-			base.Load(builder);
+    public class CQRSModule : Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            base.Load(builder);
 
-			RegisterCommands(builder);
-			RegisterQueriess(builder);
-		}
+            RegisterCommands(builder);
+            RegisterQueriess(builder);
+        }
 
-		private void RegisterQueriess(ContainerBuilder builder)
-		{
-			builder.RegisterType<QueryBus>().AsImplementedInterfaces().SingleInstance();
+        private void RegisterQueriess(ContainerBuilder builder)
+        {
+            builder.RegisterType<QueryBus>().AsImplementedInterfaces().SingleInstance();
 
-			builder.RegisterAssemblyTypes(ThisAssembly)
-				.AsClosedTypesOf(typeof(IQueryHandler<,>))
-				.SingleInstance().PropertiesAutowired();
+            builder.RegisterAssemblyTypes(ThisAssembly)
+                .AsClosedTypesOf(typeof(IQueryHandler<,>))
+                .SingleInstance().PropertiesAutowired();
+        }
 
-		}
+        private void RegisterCommands(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyTypes(ThisAssembly)
+                .Where(x => x.IsAssignableTo<ICommandHandler>())
+                .AsImplementedInterfaces();
 
-		private void RegisterCommands(ContainerBuilder builder)
-		{
-			builder.RegisterAssemblyTypes(ThisAssembly)
-				.Where(x => x.IsAssignableTo<ICommandHandler>())
-				.AsImplementedInterfaces();
+            builder.Register<Func<Type, ICommandHandler>>(c =>
+            {
+                var ctx = c.Resolve<IComponentContext>();
 
-			builder.Register<Func<Type, ICommandHandler>>(c =>
-			{
-				var ctx = c.Resolve<IComponentContext>();
+                return t =>
+                {
+                    var handlerType = typeof(ICommandHandler<>).MakeGenericType(t);
+                    return (ICommandHandler)ctx.Resolve(handlerType);
+                };
+            });
 
-				return t =>
-				{
-					var handlerType = typeof(ICommandHandler<>).MakeGenericType(t);
-					return (ICommandHandler)ctx.Resolve(handlerType);
-				};
-			});
-
-				builder.RegisterType<CommandBus>().AsImplementedInterfaces().SingleInstance();
-		}
-	}
+            builder.RegisterType<CommandBus>().AsImplementedInterfaces().SingleInstance();
+        }
+    }
 }
