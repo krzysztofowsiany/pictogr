@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Tests", "PictOgr.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Core", "PictOgr.Core\PictOgr.Core.csproj", "{FB3F2135-6255-4C60-AB53-2272A23BA778}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Database", "PictOgr.Database\PictOgr.Database.csproj", "{27F0549B-2086-4B43-BF3E-912FE3A6247F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FB3F2135-6255-4C60-AB53-2272A23BA778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3F2135-6255-4C60-AB53-2272A23BA778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3F2135-6255-4C60-AB53-2272A23BA778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F0549B-2086-4B43-BF3E-912FE3A6247F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F0549B-2086-4B43-BF3E-912FE3A6247F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F0549B-2086-4B43-BF3E-912FE3A6247F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F0549B-2086-4B43-BF3E-912FE3A6247F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
