@@ -12,7 +12,7 @@ namespace PictOgr.Core.AutoFac
         {
             var builder = new ContainerBuilder();
 
-            // LoadDLLs();
+            LoadDLLs();
 
             LoadModules(builder);
 
@@ -23,7 +23,10 @@ namespace PictOgr.Core.AutoFac
         {
             foreach (var filePath in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll"))
             {
-                AppDomain.CurrentDomain.Load(Path.GetFileNameWithoutExtension(filePath));
+                var fileName = Path.GetFileNameWithoutExtension(filePath);
+
+                if (fileName.Contains("PictOgr"))
+                    AppDomain.CurrentDomain.Load(fileName);
             }
         }
 
