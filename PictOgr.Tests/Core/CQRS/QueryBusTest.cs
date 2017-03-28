@@ -38,5 +38,3 @@ namespace PictOgr.Tests.Core.CQRS
 		}
 	}
 }
-
-	
