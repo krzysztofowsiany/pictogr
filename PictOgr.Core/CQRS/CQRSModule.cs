@@ -14,10 +14,10 @@ namespace PictOgr.Core.CQRS
             base.Load(builder);
 
             RegisterCommands(builder);
-            RegisterQueriess(builder);
+            RegisterQueries(builder);
         }
 
-        private void RegisterQueriess(ContainerBuilder builder)
+        private void RegisterQueries(ContainerBuilder builder)
         {
             builder.RegisterType<QueryBus>().AsImplementedInterfaces().SingleInstance();
 
@@ -28,22 +28,22 @@ namespace PictOgr.Core.CQRS
 
         private void RegisterCommands(ContainerBuilder builder)
         {
+            builder.RegisterType<CommandBus>().AsImplementedInterfaces().SingleInstance();
+
             builder.RegisterAssemblyTypes(ThisAssembly)
                 .Where(x => x.IsAssignableTo<ICommandHandler>())
                 .AsImplementedInterfaces();
 
             builder.Register<Func<Type, ICommandHandler>>(c =>
             {
-                var ctx = c.Resolve<IComponentContext>();
+                var context = c.Resolve<IComponentContext>();
 
-                return t =>
+                return type =>
                 {
-                    var handlerType = typeof(ICommandHandler<>).MakeGenericType(t);
-                    return (ICommandHandler)ctx.Resolve(handlerType);
+                    var handlerType = typeof(ICommandHandler<>).MakeGenericType(type);
+                    return (ICommandHandler)context.Resolve(handlerType);
                 };
             });
-
-            builder.RegisterType<CommandBus>().AsImplementedInterfaces().SingleInstance();
         }
     }
 }

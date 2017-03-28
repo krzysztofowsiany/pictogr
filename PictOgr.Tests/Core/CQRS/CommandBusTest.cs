@@ -4,7 +4,8 @@ using PictOgr.Core.AutoFac;
 using PictOgr.Core.CQRS.Bus;
 using Xunit;
 using Shouldly;
-using PictOgr.Tests.Core.CQRS.Commands;
+using FakeItEasy;
+using PictOgr.Core.CQRS.Command;
 
 namespace PictOgr.Tests.Core.CQRS
 {
@@ -27,9 +28,10 @@ namespace PictOgr.Tests.Core.CQRS
                 commandBus.ShouldBeOfType<CommandBus>();
 
                 Should.Throw<Exception>(() =>
-                {
-                    commandBus.SendCommand(new CommandTest());
-                });
+                    {
+                        var fakeCommand = A.Fake<ICommand>();
+                        commandBus.SendCommand(fakeCommand);
+                    });
             }
         }
     }

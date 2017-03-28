@@ -81,11 +81,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CQRS\Commands\ExitCommandTest.cs" />
     <Compile Include="Core\CQRS\Queries\QueryTestClassHandler.cs" />
     <Compile Include="Core\CQRS\QueryTests.cs" />
     <Compile Include="Core\CQRS\QueryBusTest.cs" />
     <Compile Include="Core\CQRS\CommandBusTest.cs" />
-    <Compile Include="Core\CQRS\Commands\CommandTest.cs" />
     <Compile Include="Core\CQRS\Queries\QueryTestClass.cs" />
     <Compile Include="Database\LiteDBTests.cs" />
     <Compile Include="TestsModule.cs" />
