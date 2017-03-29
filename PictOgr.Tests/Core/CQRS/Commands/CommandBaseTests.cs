@@ -21,7 +21,7 @@
             A.CallTo(() => fakeHandler.Handle(A<T>._))
                 .Invokes((T command) =>
                 {
-                    handleMethod(command);
+                    handleMethod?.Invoke(command);
                 });
 
             builder.Register(c => fakeHandler).AsImplementedInterfaces();
