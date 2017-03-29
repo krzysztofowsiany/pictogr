@@ -81,6 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CQRS\Commands\CommandBaseTests.cs" />
     <Compile Include="Core\CQRS\Commands\ExitCommandTest.cs" />
     <Compile Include="Core\CQRS\Queries\QueryTestClassHandler.cs" />
     <Compile Include="Core\CQRS\QueryTests.cs" />
