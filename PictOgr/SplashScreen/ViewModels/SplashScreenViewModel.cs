@@ -1,18 +1,16 @@
-﻿
-using System;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Threading;
-using Autofac.Extras.NLog;
-using PictOgr.Core;
-using PictOgr.Core.CQRS.Bus;
-using PictOgr.Core.Models;
-using PictOgr.Core.Queries;
-using PictOgr.SplashScreen.Commands;
-
-namespace PictOgr.SplashScreen.ViewModels
+﻿namespace PictOgr.SplashScreen.ViewModels
 {
-	public class SplashScreenViewModel : BaseViewModel
+    using System;
+    using System.Windows.Input;
+    using System.Windows.Threading;
+    using Autofac.Extras.NLog;
+    using Core;
+    using Core.Models;
+    using Core.Queries;
+    using Core.CQRS.Bus.Query;
+    using Commands;
+
+    public class SplashScreenViewModel : BaseViewModel
 	{
 		private readonly ExitApplicationCommand exitApplicationCommand;
 		private readonly StartApplicationCommand startApplicationCommand;

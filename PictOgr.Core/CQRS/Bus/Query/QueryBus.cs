@@ -1,11 +1,11 @@
-﻿using System;
-using Autofac;
-using Autofac.Extras.NLog;
-using PictOgr.Core.CQRS.Query;
-
-namespace PictOgr.Core.CQRS.Bus
+﻿namespace PictOgr.Core.CQRS.Bus.Query
 {
-	public class QueryBus : IQueryBus
+    using System;
+    using Autofac;
+    using Autofac.Extras.NLog;
+    using CQRS.Query;
+
+    public class QueryBus : IQueryBus
 	{
 		private readonly ILifetimeScope container;
 		private readonly ILogger logger;
@@ -18,7 +18,7 @@ namespace PictOgr.Core.CQRS.Bus
 
 		public TResult Process<TQuery, TResult>(TQuery query) where TQuery : IQuery<TResult>
 		{
-			var queryHandle = container.Resolve<IQueryHandler<TQuery, TResult>>();
+			var queryHandle = this.container.Resolve<IQueryHandler<TQuery, TResult>>();
 
 			if (queryHandle == null)
 			{
@@ -33,7 +33,7 @@ namespace PictOgr.Core.CQRS.Bus
 			}
 			catch (Exception e)
 			{
-				logger.Error(e);
+				this.logger.Error(e);
 			}
 
 			return result;

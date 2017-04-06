@@ -1,10 +1,10 @@
-﻿using System;
-using Autofac;
-using Autofac.Extras.NLog;
-using PictOgr.Core.CQRS.Command;
-
-namespace PictOgr.Core.CQRS.Bus
+﻿namespace PictOgr.Core.CQRS.Bus.Command
 {
+    using System;
+    using Autofac;
+    using Autofac.Extras.NLog;
+    using CQRS.Command;
+
     public class CommandBus : ICommandBus
     {
         private readonly ILifetimeScope container;
@@ -23,7 +23,7 @@ namespace PictOgr.Core.CQRS.Bus
                 throw new ArgumentNullException(nameof(command));
             }
 
-            var commandHandler = container.ResolveOptional<ICommandHandler<TCommand>>();
+            var commandHandler = this.container.ResolveOptional<ICommandHandler<TCommand>>();
 
             if (commandHandler == null)
             {

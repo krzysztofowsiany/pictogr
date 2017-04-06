@@ -2,12 +2,13 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Autofac.Extras.NLog;
-using PictOgr.Core.CQRS.Bus;
 using PictOgr.Core.Properties;
 
 namespace PictOgr.Core
 {
-	public class BaseViewModel : INotifyPropertyChanged
+    using PictOgr.Core.CQRS.Bus.Query;
+
+    public class BaseViewModel : INotifyPropertyChanged
 	{
 		protected readonly IQueryBus QueryBus;
 		protected readonly ILogger Logger;

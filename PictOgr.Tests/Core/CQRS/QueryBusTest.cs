@@ -1,14 +1,14 @@
-﻿using System;
-using Autofac;
-using PictOgr.Core.AutoFac;
-using PictOgr.Core.CQRS.Bus;
-using Xunit;
-using Shouldly;
-using PictOgr.Core.CQRS.Query;
-
-namespace PictOgr.Tests.Core.CQRS
+﻿namespace PictOgr.Tests.Core.CQRS
 {
-	public class QueryBusTest
+    using System;
+    using Autofac;
+    using PictOgr.Core.AutoFac;
+    using Xunit;
+    using Shouldly;
+    using PictOgr.Core.CQRS.Query;
+    using PictOgr.Core.CQRS.Bus.Query;
+
+    public class QueryBusTest
 	{
 		private readonly IContainer container;
 

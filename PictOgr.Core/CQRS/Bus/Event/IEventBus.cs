@@ -1,6 +1,6 @@
-﻿namespace PictOgr.Core.CQRS.Bus
+﻿namespace PictOgr.Core.CQRS.Bus.Event
 {
-    using PictOgr.Core.CQRS.Event;
+    using CQRS.Event;
 
     public interface IEventBus
     {

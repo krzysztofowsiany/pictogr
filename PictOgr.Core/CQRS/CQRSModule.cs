@@ -1,13 +1,13 @@
-﻿using System;
-using Autofac;
-using PictOgr.Core.CQRS.Bus;
-using PictOgr.Core.CQRS.Command;
-using PictOgr.Core.CQRS.Query;
-using Module = Autofac.Module;
-
-namespace PictOgr.Core.CQRS
+﻿namespace PictOgr.Core.CQRS
 {
-    using PictOgr.Core.CQRS.Event;
+    using System;
+    using Autofac;
+    using Bus.Command;
+    using Bus.Event;
+    using Bus.Query;
+    using Event;
+    using Command;
+    using Query;
 
     public class CQRSModule : Module
     {

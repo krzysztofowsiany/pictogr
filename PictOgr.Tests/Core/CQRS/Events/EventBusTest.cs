@@ -4,7 +4,7 @@
     using Autofac;
     using FakeItEasy;
     using PictOgr.Core.AutoFac;
-    using PictOgr.Core.CQRS.Bus;
+    using PictOgr.Core.CQRS.Bus.Event;
     using PictOgr.Core.CQRS.Event;
     using Shouldly;
     using Xunit;
