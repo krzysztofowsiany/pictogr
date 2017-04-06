@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Core\CQRS\Commands\CommandBaseTests.cs" />
     <Compile Include="Core\CQRS\Commands\ExitApplicationCommandTest.cs" />
+    <Compile Include="Core\CQRS\Events\EventBusTest.cs" />
     <Compile Include="Core\CQRS\Queries\GetApplicationInformationTest.cs" />
     <Compile Include="Core\CQRS\Queries\QueryBaseTests.cs" />
     <Compile Include="Core\CQRS\Queries\QueryTestClassHandler.cs" />

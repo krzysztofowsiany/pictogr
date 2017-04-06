@@ -1,11 +1,11 @@
-﻿using System;
-using PictOgr.Core.Commands;
-using PictOgr.Core.CQRS.Bus;
-using ICommand = System.Windows.Input.ICommand;
-
-namespace PictOgr.SplashScreen.Commands
+﻿namespace PictOgr.SplashScreen.Commands
 {
-	public class ExitApplicationCommand : ICommand
+    using System;
+    using System.Windows.Input;
+    using Core.Commands;
+    using Core.CQRS.Bus.Command;
+
+    public class ExitApplicationCommand : ICommand
 	{
 		private readonly ICommandBus commandBus;
 

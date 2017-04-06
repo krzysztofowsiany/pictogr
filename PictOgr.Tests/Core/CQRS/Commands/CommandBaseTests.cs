@@ -4,7 +4,7 @@
     using Autofac;
     using FakeItEasy;
     using PictOgr.Core.AutoFac;
-    using PictOgr.Core.CQRS.Bus;
+    using PictOgr.Core.CQRS.Bus.Command;
     using PictOgr.Core.CQRS.Command;
 
     public class CommandBaseTests<T> where T : ICommand

@@ -1,12 +1,14 @@
-﻿using System;
-using Autofac;
-using PictOgr.Core.CQRS.Bus;
-using PictOgr.Core.CQRS.Command;
-using PictOgr.Core.CQRS.Query;
-using Module = Autofac.Module;
-
-namespace PictOgr.Core.CQRS
+﻿namespace PictOgr.Core.CQRS
 {
+    using System;
+    using Autofac;
+    using Bus.Command;
+    using Bus.Event;
+    using Bus.Query;
+    using Event;
+    using Command;
+    using Query;
+
     public class CQRSModule : Module
     {
         protected override void Load(ContainerBuilder builder)
@@ -15,7 +17,17 @@ namespace PictOgr.Core.CQRS
 
             RegisterCommands(builder);
             RegisterQueries(builder);
+            RegisterEvents(builder);
         }
+
+        private void RegisterEvents(ContainerBuilder builder)
+        {
+            builder.RegisterType<EventBus>().AsImplementedInterfaces().SingleInstance();
+
+            builder.RegisterAssemblyTypes(ThisAssembly)
+                .AsClosedTypesOf(typeof(IEventHandler<>)).PropertiesAutowired();
+        }
+
 
         private void RegisterQueries(ContainerBuilder builder)
         {

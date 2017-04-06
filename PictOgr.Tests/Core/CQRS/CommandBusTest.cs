@@ -1,14 +1,14 @@
-﻿using System;
-using Autofac;
-using PictOgr.Core.AutoFac;
-using PictOgr.Core.CQRS.Bus;
-using Xunit;
-using Shouldly;
-using FakeItEasy;
-using PictOgr.Core.CQRS.Command;
-
-namespace PictOgr.Tests.Core.CQRS
+﻿namespace PictOgr.Tests.Core.CQRS
 {
+    using System;
+    using Autofac;
+    using FakeItEasy;
+    using PictOgr.Core.AutoFac;
+    using PictOgr.Core.CQRS.Bus.Command;
+    using PictOgr.Core.CQRS.Command;
+    using Shouldly;
+    using Xunit;
+
     public class CommandBusTest
     {
         private readonly IContainer container;
