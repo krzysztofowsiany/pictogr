@@ -7,6 +7,8 @@ using Module = Autofac.Module;
 
 namespace PictOgr.Core.CQRS
 {
+    using PictOgr.Core.CQRS.Event;
+
     public class CQRSModule : Module
     {
         protected override void Load(ContainerBuilder builder)
@@ -15,7 +17,17 @@ namespace PictOgr.Core.CQRS
 
             RegisterCommands(builder);
             RegisterQueries(builder);
+            RegisterEvents(builder);
         }
+
+        private void RegisterEvents(ContainerBuilder builder)
+        {
+            builder.RegisterType<EventBus>().AsImplementedInterfaces().SingleInstance();
+
+            builder.RegisterAssemblyTypes(ThisAssembly)
+                .AsClosedTypesOf(typeof(IEventHandler<>)).PropertiesAutowired();
+        }
+
 
         private void RegisterQueries(ContainerBuilder builder)
         {

@@ -62,6 +62,10 @@
     <Compile Include="Commands\ExitApplicationHandler.cs" />
     <Compile Include="Commands\ExitApplication.cs" />
     <Compile Include="CoreModule.cs" />
+    <Compile Include="CQRS\Bus\EventBus.cs" />
+    <Compile Include="CQRS\Event\IEventHandler.cs" />
+    <Compile Include="CQRS\Event\IEvent.cs" />
+    <Compile Include="CQRS\Bus\IEventBus.cs" />
     <Compile Include="Models\ApplicationInformation.cs" />
     <Compile Include="AutoFac\Container.cs" />
     <Compile Include="BaseViewModel.cs" />
