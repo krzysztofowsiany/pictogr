@@ -1,11 +1,8 @@
 ﻿namespace PictOgr.Tests.Core.CQRS.Queries
 {
     using System;
-
     using Autofac;
     using FakeItEasy;
-    using FakeItEasy.Configuration;
-
     using PictOgr.Core.AutoFac;
     using PictOgr.Core.CQRS.Bus;
     using PictOgr.Core.CQRS.Query;

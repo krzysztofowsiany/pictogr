@@ -20,7 +20,7 @@ public class EventBus : IEventBus
     {
         List<object> eventHandlers;
 
-        if (eventList.ContainsKey(typeof(TEvent)))
+        if (!eventList.ContainsKey(typeof(TEvent)))
         {
             eventList.Add(typeof(TEvent), new List<object>());
         }
@@ -55,6 +55,11 @@ public class EventBus : IEventBus
         try
         {
             eventHandlers.Remove(eventHandler);
+
+            if (eventHandlers.Count == 0)
+            {
+                eventList.Remove(typeof(TEvent));
+            }
         }
         catch (Exception e)
         {
