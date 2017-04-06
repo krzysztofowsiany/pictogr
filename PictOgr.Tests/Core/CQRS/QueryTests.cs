@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using PictOgr.Core.AutoFac;
-using PictOgr.Core.CQRS.Bus;
 using Xunit;
 using Shouldly;
 using PictOgr.Core.Models;
@@ -9,7 +8,9 @@ using PictOgr.Tests.Core.CQRS.Queries;
 
 namespace PictOgr.Tests.Core.CQRS
 {
-	public class QueryTests
+    using PictOgr.Core.CQRS.Bus.Query;
+
+    public class QueryTests
 	{
 		private readonly IQueryBus queryBus;
 

@@ -1,11 +1,11 @@
-﻿using System;
-using PictOgr.Core;
-using PictOgr.MainWindow.Views;
-using ICommand = System.Windows.Input.ICommand;
-
-namespace PictOgr.SplashScreen.Commands
+﻿namespace PictOgr.SplashScreen.Commands
 {
-	public class StartApplicationCommand : ICommand
+    using System;
+    using System.Windows.Input;
+    using Core;
+    using MainWindow.Views;
+
+    public class StartApplicationCommand : ICommand
 	{
 		private readonly MainWindowView mainWindowView;
 
