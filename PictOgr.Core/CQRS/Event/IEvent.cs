@@ -1,6 +1,6 @@
 ﻿namespace PictOgr.Core.CQRS.Event
 {
-    public interface IEvent
-    {
-    }
+	public interface IEvent
+	{
+	}
 }

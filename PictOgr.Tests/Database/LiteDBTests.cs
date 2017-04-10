@@ -6,24 +6,24 @@ using Xunit;
 
 namespace PictOgr.Tests.Database
 {
-    public class LiteDBTests
-    {
-        private readonly IContainer container;
+	public class LiteDBTests
+	{
+		private readonly IContainer container;
 
-        public LiteDBTests()
-        {
-            container = Container.CreateBuilder().Build();
-        }
+		public LiteDBTests()
+		{
+			container = Container.CreateBuilder().Build();
+		}
 
-        [Fact]
-        public void test_database_connection()
-        {
-            using (var scope = container.BeginLifetimeScope())
-            {
-                var database = scope.Resolve<IDatabase>();
+		[Fact]
+		public void test_database_connection()
+		{
+			using (var scope = container.BeginLifetimeScope())
+			{
+				var database = scope.Resolve<IDatabase>();
 
-                database.ShouldNotBeNull();
-            }
-        }
-    }
+				database.ShouldNotBeNull();
+			}
+		}
+	}
 }
