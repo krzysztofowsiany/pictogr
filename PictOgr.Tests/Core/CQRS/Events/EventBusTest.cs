@@ -1,5 +1,6 @@
 ﻿namespace PictOgr.Tests.Core.CQRS.Events
 {
+	using System.Collections.Generic;
 	using System;
 	using Autofac;
 	using FakeItEasy;
@@ -82,6 +83,44 @@
 
 				Should.Throw<TypeUnloadedException>(() => { eventBus.Publish(fakeEvent); });
 				eventFromInvoke.ShouldBeNull();
+			}
+		}
+
+		[Fact]
+		public void event_bus_register_many_handlers_should_add_event_handler()
+		{
+			using (var scope = container.BeginLifetimeScope())
+			{
+				var count = 100;
+				var eventBus = scope.Resolve<IEventBus>();
+				var eventHanlders = new List<IEventHandler<IEvent>>();
+				var events = new List<IEvent>();
+
+				for (var i = 0; i < count; i++)
+				{
+					var eventHanlder = A.Fake<IEventHandler<IEvent>>();
+					eventHanlders.Add(eventHanlder);
+
+					A.CallTo(() => eventHanlder.Handle(A<IEvent>._))
+						.Invokes((IEvent ev) =>
+						{
+							events.Add(ev);
+						});
+
+					eventBus.Register(eventHanlder);
+				}
+
+				eventBus.Publish(fakeEvent);
+
+				for (var i = 0; i < count; i++)
+				{
+					eventBus.UnRegister(eventHanlders[i]);
+				}
+
+				foreach (var @event in events)
+				{
+					@event.ShouldBeSameAs(fakeEvent);
+				}
 			}
 		}
 
