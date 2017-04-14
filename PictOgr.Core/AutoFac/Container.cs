@@ -25,7 +25,8 @@
 			{
 				var fileName = Path.GetFileNameWithoutExtension(filePath);
 
-				if (fileName.Contains("PictOgr"))
+
+                if (fileName.Contains("PictOgr") || fileName.Contains("CQRS"))
 					AppDomain.CurrentDomain.Load(fileName);
 			}
 		}

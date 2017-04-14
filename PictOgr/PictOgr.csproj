@@ -125,10 +125,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config">
-      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="PictOgr.ruleset" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
