@@ -1,9 +1,8 @@
-﻿using Autofac;
-using PictOgr.Core.CQRS.Query;
-using Module = Autofac.Module;
-
-namespace PictOgr.Tests
+﻿namespace PictOgr.Tests
 {
+	using Autofac;
+	using CQRS.Query;
+
 	public class TestsModule : Module
 	{
 		protected override void Load(ContainerBuilder builder)

@@ -1,16 +1,19 @@
-﻿namespace PictOgr.Tests.Core.CQRS.Commands
+﻿using CQRS.Tests;
+
+namespace PictOgr.Tests.Core.CQRS.Commands
 {
 	using PictOgr.Core.Commands;
 	using SplashScreen.Commands;
 	using Shouldly;
 	using Xunit;
+	using PictOgr.Core.AutoFac;
 
 	public class ExitApplicationCommandTest : CommandBaseTests<ExitApplication>
 	{
 		private readonly int expectedValue = 123;
 		private int exitCode;
 
-		public ExitApplicationCommandTest()
+		public ExitApplicationCommandTest():base(Container.CreateBuilder())
 		{
 			handleMethod = command =>
 			{

@@ -1,10 +1,10 @@
 ﻿namespace PictOgr.MainWindow.ViewModels
 {
-    using Autofac.Extras.NLog;
-    using Core;
-    using Core.CQRS.Bus.Query;
+	using CQRS.Bus.Query;
+	using Autofac.Extras.NLog;
+	using Core;
 
-    public class MainWindowViewModel : BaseViewModel
+	public class MainWindowViewModel : BaseViewModel
 	{
 		public MainWindowViewModel(IQueryBus queryBus, ILogger logger) : base(queryBus, logger)
 		{

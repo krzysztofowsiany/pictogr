@@ -1,6 +1,6 @@
 ﻿using CQRS.Query;
 
-namespace PictOgr.Tests.Core.CQRS.Queries
+namespace CQRS.Tests.Queries
 {
 	public class QueryTestClassHandler : IQueryHandler<QueryTestClass, int>
 	{

@@ -1,45 +1,45 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using Autofac;
-using Autofac.Core;
-
-namespace PictOgr.Core.AutoFac
+﻿namespace PictOgr.Core.AutoFac
 {
-    public static class Container
-    {
-        public static ContainerBuilder CreateBuilder()
-        {
-            var builder = new ContainerBuilder();
+	using System;
+	using System.IO;
+	using System.Linq;
+	using Autofac;
+	using Autofac.Core;
 
-            LoadDLLs();
+	public static class Container
+	{
+		public static ContainerBuilder CreateBuilder()
+		{
+			var builder = new ContainerBuilder();
 
-            LoadModules(builder);
+			LoadDLLs();
 
-            return builder;
-        }
+			LoadModules(builder);
 
-        private static void LoadDLLs()
-        {
-            foreach (var filePath in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll"))
-            {
-                var fileName = Path.GetFileNameWithoutExtension(filePath);
+			return builder;
+		}
 
-                if (fileName.Contains("PictOgr"))
-                    AppDomain.CurrentDomain.Load(fileName);
-            }
-        }
+		private static void LoadDLLs()
+		{
+			foreach (var filePath in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.dll"))
+			{
+				var fileName = Path.GetFileNameWithoutExtension(filePath);
 
-        private static void LoadModules(ContainerBuilder builder)
-        {
-            var types = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(x => x.GetTypes())
-                .Where(t => t.IsAssignableTo<IModule>() && t.IsClass && !t.IsAbstract);
+				if (fileName.Contains("PictOgr"))
+					AppDomain.CurrentDomain.Load(fileName);
+			}
+		}
 
-            foreach (var type in types)
-            {
-                builder.RegisterModule((IModule)Activator.CreateInstance(type));
-            }
-        }
-    }
+		private static void LoadModules(ContainerBuilder builder)
+		{
+			var types = AppDomain.CurrentDomain.GetAssemblies()
+				.SelectMany(x => x.GetTypes())
+				.Where(t => t.IsAssignableTo<IModule>() && t.IsClass && !t.IsAbstract);
+
+			foreach (var type in types)
+			{
+				builder.RegisterModule((IModule)Activator.CreateInstance(type));
+			}
+		}
+	}
 }

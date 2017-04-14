@@ -1,16 +1,14 @@
-﻿using CQRS.Bus.Event;
+﻿using System;
+using System.Collections.Generic;
+using Autofac;
+using CQRS.Bus.Event;
 using CQRS.Event;
+using FakeItEasy;
+using Shouldly;
+using Xunit;
 
-namespace PictOgr.Tests.Core.CQRS.Events
+namespace CQRS.Tests.Events
 {
-	using System.Collections.Generic;
-	using System;
-	using Autofac;
-	using FakeItEasy;
-	using PictOgr.Core.AutoFac;
-	using Shouldly;
-	using Xunit;
-
 	public class EventdBusTest : IDisposable
 	{
 		private readonly IContainer container;

@@ -1,9 +1,9 @@
-﻿using System.Reflection;
-using PictOgr.Core.CQRS.Query;
-using PictOgr.Core.Models;
-
-namespace PictOgr.Core.Queries
+﻿namespace PictOgr.Core.Queries
 {
+	using System.Reflection;
+	using CQRS.Query;
+	using Models;
+
 	public class GetApplicationInformationHandler : IQueryHandler<GetApplicationInformation, ApplicationInformation>
 	{
 		public ApplicationInformation Execute(GetApplicationInformation query)

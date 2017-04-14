@@ -1,16 +1,16 @@
 ﻿namespace PictOgr.SplashScreen.ViewModels
 {
-    using System;
-    using System.Windows.Input;
-    using System.Windows.Threading;
-    using Autofac.Extras.NLog;
-    using Core;
-    using Core.Models;
-    using Core.Queries;
-    using Core.CQRS.Bus.Query;
-    using Commands;
+	using System;
+	using System.Windows.Input;
+	using System.Windows.Threading;
+	using Autofac.Extras.NLog;
+	using Core;
+	using Core.Models;
+	using Core.Queries;
+	using Commands;
+	using CQRS.Bus.Query;
 
-    public class SplashScreenViewModel : BaseViewModel
+	public class SplashScreenViewModel : BaseViewModel
 	{
 		private readonly ExitApplicationCommand exitApplicationCommand;
 		private readonly StartApplicationCommand startApplicationCommand;

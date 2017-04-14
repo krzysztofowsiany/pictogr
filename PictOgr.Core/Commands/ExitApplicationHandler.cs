@@ -1,8 +1,8 @@
-﻿using Autofac.Extras.NLog;
-using PictOgr.Core.CQRS.Command;
-
-namespace PictOgr.Core.Commands
+﻿namespace PictOgr.Core.Commands
 {
+	using Autofac.Extras.NLog;
+	using CQRS.Command;
+
 	public class ExitApplicationHandler : ICommandHandler<ExitApplication>
 	{
 		private readonly ILogger logger;
