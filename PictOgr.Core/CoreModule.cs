@@ -10,6 +10,8 @@ namespace PictOgr.Core
 			base.Load(builder);
 			
 			builder.RegisterModule<NLogModule>();
+
+
 		}
 	}
 }

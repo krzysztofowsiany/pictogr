@@ -139,10 +139,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CQRS\CQRS.csproj">
-      <Project>{D81D3626-5DAE-4502-AC2F-839E718E235C}</Project>
-      <Name>CQRS</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PictOgr.Core\PictOgr.Core.csproj">
       <Project>{fb3f2135-6255-4c60-ab53-2272a23ba778}</Project>
       <Name>PictOgr.Core</Name>

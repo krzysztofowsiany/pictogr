@@ -1,4 +1,8 @@
-﻿namespace PictOgr.Core.AutoFac
+﻿using System.Reflection;
+using Autofac.Extras.NLog;
+using CQRS;
+
+namespace PictOgr.Core.AutoFac
 {
 	using System;
 	using System.IO;
@@ -26,7 +30,6 @@
 				var fileName = Path.GetFileNameWithoutExtension(filePath);
 
 
-                if (fileName.Contains("PictOgr") || fileName.Contains("CQRS"))
 					AppDomain.CurrentDomain.Load(fileName);
 			}
 		}
@@ -37,9 +40,12 @@
 				.SelectMany(x => x.GetTypes())
 				.Where(t => t.IsAssignableTo<IModule>() && t.IsClass && !t.IsAbstract);
 
+			builder.RegisterModule(new CQRSModule(Assembly.GetExecutingAssembly()));
+		
 			foreach (var type in types)
 			{
-				builder.RegisterModule((IModule)Activator.CreateInstance(type));
+				if (!type.Name.Equals("CQRSModule"))
+					builder.RegisterModule((IModule)Activator.CreateInstance(type));
 			}
 		}
 	}
