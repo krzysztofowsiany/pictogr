@@ -1,0 +1,3 @@
+[submodule "CQRS"]
+	path = CQRS
+	url = https://github.com/krzysztofowsiany/cqrs

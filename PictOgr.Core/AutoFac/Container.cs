@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using Autofac.Extras.NLog;
 using CQRS;
 
 namespace PictOgr.Core.AutoFac
@@ -30,22 +29,27 @@ namespace PictOgr.Core.AutoFac
 				var fileName = Path.GetFileNameWithoutExtension(filePath);
 
 
-					AppDomain.CurrentDomain.Load(fileName);
+				AppDomain.CurrentDomain.Load(fileName);
 			}
 		}
 
 		private static void LoadModules(ContainerBuilder builder)
 		{
-			var types = AppDomain.CurrentDomain.GetAssemblies()
+			var assemblies = AppDomain.CurrentDomain.GetAssemblies()
+				.Where(a => !a.FullName.Contains("xunit"));
+
+			var types = assemblies
 				.SelectMany(x => x.GetTypes())
-				.Where(t => t.IsAssignableTo<IModule>() && t.IsClass && !t.IsAbstract);
+				.Where(t => t.IsAssignableTo<IModule>() && t.IsClass && !t.IsAbstract).ToList();
 
 			builder.RegisterModule(new CQRSModule(Assembly.GetExecutingAssembly()));
-		
+
 			foreach (var type in types)
 			{
 				if (!type.Name.Equals("CQRSModule"))
-					builder.RegisterModule((IModule)Activator.CreateInstance(type));
+				{
+					builder.RegisterModule((IModule) Activator.CreateInstance(type));
+				}
 			}
 		}
 	}

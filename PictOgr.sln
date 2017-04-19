@@ -11,9 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Core", "PictOgr.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Database", "PictOgr.Database\PictOgr.Database.csproj", "{27F0549B-2086-4B43-BF3E-912FE3A6247F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS", "CQRS\CQRS.csproj", "{D81D3626-5DAE-4502-AC2F-839E718E235C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS.Tests", "CQRS.Tests\CQRS.Tests.csproj", "{9E38806F-7341-4A51-BE53-88AB80491E26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS", "CQRS\CQRS\CQRS.csproj", "{D81D3626-5DAE-4502-AC2F-839E718E235C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{D81D3626-5DAE-4502-AC2F-839E718E235C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81D3626-5DAE-4502-AC2F-839E718E235C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81D3626-5DAE-4502-AC2F-839E718E235C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E38806F-7341-4A51-BE53-88AB80491E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E38806F-7341-4A51-BE53-88AB80491E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E38806F-7341-4A51-BE53-88AB80491E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E38806F-7341-4A51-BE53-88AB80491E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

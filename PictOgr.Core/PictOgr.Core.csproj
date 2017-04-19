@@ -76,8 +76,8 @@
     <None Include="PictOgr.Core.ruleset" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CQRS\CQRS.csproj">
-      <Project>{d81d3626-5dae-4502-ac2f-839e718e235c}</Project>
+    <ProjectReference Include="..\CQRS\CQRS\CQRS.csproj">
+      <Project>{D81D3626-5DAE-4502-AC2F-839E718E235C}</Project>
       <Name>CQRS</Name>
     </ProjectReference>
   </ItemGroup>
