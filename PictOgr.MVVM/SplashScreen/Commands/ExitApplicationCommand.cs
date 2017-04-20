@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Windows.Input;
 using CQRS.Bus.Command;
-using PictOgr.Infrastructure.Commands;
+using CQRS.Bus.Event;
 using PictOgr.Infrastructure.Commands.ExitApplication;
+using PictOgr.Infrastructure.Events;
 
 namespace PictOgr.MVVM.SplashScreen.Commands
 {
 	public class ExitApplicationCommand : ICommand
 	{
-		private readonly ICommandBus commandBus;
+		private readonly ICommandBus _commandBus;
+		private readonly IEventBus _eventBus;
 
-		public ExitApplicationCommand(ICommandBus commandBus)
+		public ExitApplicationCommand(ICommandBus commandBus,  IEventBus eventBus)
 		{
-			this.commandBus = commandBus;
+			_commandBus = commandBus;
+			_eventBus = eventBus;
 		}
 
 		public bool CanExecute(object parameter)
@@ -22,7 +25,8 @@ namespace PictOgr.MVVM.SplashScreen.Commands
 
 		public void Execute(object parameter)
 		{
-			commandBus.SendCommand<ExitApplication>(new ExitApplication(0));
+			_eventBus.Publish(new ExitApplicationEvent());
+			_commandBus.SendCommand<ExitApplication>(new ExitApplication(0));
 		}
 
 		public event EventHandler CanExecuteChanged;

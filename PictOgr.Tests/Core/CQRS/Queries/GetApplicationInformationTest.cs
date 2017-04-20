@@ -3,6 +3,7 @@ using PictOgr.Core.Domain;
 using PictOgr.Infrastructure.AutoFac;
 using PictOgr.Infrastructure.DTO;
 using PictOgr.Infrastructure.Queries;
+using PictOgr.Infrastructure.Queries.ApplicationInformation;
 using Ploeh.AutoFixture;
 
 namespace PictOgr.Tests.Core.CQRS.Queries

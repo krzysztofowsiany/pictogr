@@ -69,14 +69,16 @@
     <Compile Include="AutoFac\DatabaseModule.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="DTO\ApplicationInformationDto.cs" />
+    <Compile Include="Events\ExitApplicationEvent.cs" />
+    <Compile Include="Events\ExitApplicationEventHandler.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\GetApplicationInformation.cs" />
-    <Compile Include="Queries\GetApplicationInformationHandler.cs" />
+    <Compile Include="Queries\ApplicationInformation\GetApplicationInformation.cs" />
+    <Compile Include="Queries\ApplicationInformation\GetApplicationInformationHandler.cs" />
     <Compile Include="Repositories\ApplicationInformationRepository.cs" />
-    <Compile Include="Services\ApplicationService.cs" />
-    <Compile Include="Services\IApplicationService.cs" />
+    <Compile Include="Services\ApplicationService\ApplicationService.cs" />
+    <Compile Include="Services\ApplicationService\IApplicationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

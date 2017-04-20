@@ -34,7 +34,7 @@ namespace PictOgr.Tests.Core.CQRS.Commands
 		[Fact]
 		public void window_command_exit_application_should_be_handle_by_command_bus()
 		{
-			var exitApplicationCommand = new ExitApplicationCommand(commandBus);
+			var exitApplicationCommand = new ExitApplicationCommand(commandBus, null);
 
 			exitApplicationCommand.Execute(null);
 

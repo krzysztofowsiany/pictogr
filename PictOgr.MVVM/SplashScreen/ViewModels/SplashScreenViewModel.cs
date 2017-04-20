@@ -4,7 +4,7 @@ using System.Windows.Threading;
 using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
 using PictOgr.Infrastructure.DTO;
-using PictOgr.Infrastructure.Queries;
+using PictOgr.Infrastructure.Queries.ApplicationInformation;
 using PictOgr.MVVM.SplashScreen.Commands;
 
 namespace PictOgr.MVVM.SplashScreen.ViewModels
