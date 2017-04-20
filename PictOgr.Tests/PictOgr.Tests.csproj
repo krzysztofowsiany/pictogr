@@ -104,9 +104,9 @@
       <Project>{27f0549b-2086-4b43-bf3e-912fe3a6247f}</Project>
       <Name>PictOgr.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PictOgr.GUI\PictOgr.GUI.csproj">
+    <ProjectReference Include="..\PictOgr\PictOgr.csproj">
       <Project>{2c79f223-4f86-40b2-9822-0f9e3d1cc297}</Project>
-      <Name>PictOgr.GUI</Name>
+      <Name>PictOgr</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
