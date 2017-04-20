@@ -71,6 +71,7 @@
     <Compile Include="MainWindow\Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashScreen\Commands\ExitApplicationCommand.cs" />
     <Compile Include="SplashScreen\Commands\StartApplicationCommand.cs" />
@@ -102,10 +103,6 @@
     <ProjectReference Include="..\CQRS\CQRS\CQRS.csproj">
       <Project>{D81D3626-5DAE-4502-AC2F-839E718E235C}</Project>
       <Name>CQRS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PictOgr.Core\PictOgr.Core.csproj">
-      <Project>{FB3F2135-6255-4C60-AB53-2272A23BA778}</Project>
-      <Name>PictOgr.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\PictOgr.Infrastructure\PictOgr.Infrastructure.csproj">
       <Project>{27F0549B-2086-4B43-BF3E-912FE3A6247F}</Project>

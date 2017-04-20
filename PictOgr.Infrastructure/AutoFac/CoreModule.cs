@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Autofac.Extras.NLog;
 
-namespace PictOgr.Infrastructure
+namespace PictOgr.Infrastructure.AutoFac
 {
 	public class CoreModule : Module
 	{

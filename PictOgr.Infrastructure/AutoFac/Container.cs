@@ -5,6 +5,7 @@ using System.Reflection;
 using Autofac;
 using Autofac.Core;
 using CQRS;
+using PictOgr.Infrastructure.Mappers;
 
 namespace PictOgr.Infrastructure.AutoFac
 {
@@ -42,6 +43,8 @@ namespace PictOgr.Infrastructure.AutoFac
 				.Where(t => t.IsAssignableTo<IModule>() && t.IsClass && !t.IsAbstract).ToList();
 
 			builder.RegisterModule(new CQRSModule(Assembly.GetExecutingAssembly()));
+
+			builder.RegisterInstance(AutoMapperConfig.Initialize()).SingleInstance();
 
 			foreach (var type in types)
 			{

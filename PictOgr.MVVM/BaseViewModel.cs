@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
-using PictOgr.Core.Properties;
+using PictOgr.MVVM.Properties;
 
 namespace PictOgr.MVVM
 {

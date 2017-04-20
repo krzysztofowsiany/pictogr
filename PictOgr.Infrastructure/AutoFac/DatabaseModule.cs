@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace PictOgr.Infrastructure
+namespace PictOgr.Infrastructure.AutoFac
 {
 	public class DatabaseModule : Module
 	{
@@ -9,7 +9,6 @@ namespace PictOgr.Infrastructure
 			base.Load(builder);
 
 			builder.RegisterType<Database>().AsImplementedInterfaces();
-
 		}
 	}
 }

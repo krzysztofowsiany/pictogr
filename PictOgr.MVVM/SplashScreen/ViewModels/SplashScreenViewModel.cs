@@ -3,7 +3,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
-using PictOgr.Core.Domain;
+using PictOgr.Infrastructure.DTO;
 using PictOgr.Infrastructure.Queries;
 using PictOgr.MVVM.SplashScreen.Commands;
 
@@ -15,7 +15,7 @@ namespace PictOgr.MVVM.SplashScreen.ViewModels
 		private readonly StartApplicationCommand startApplicationCommand;
 		private DispatcherTimer startTimer;
 
-		public ApplicationInformation ApplicationInformation { get; private set; }
+		public ApplicationInformationDto ApplicationInformation { get; private set; }
 		public short CurrentAutoRunTime { get; set; }
 		public int TargetAutoRunTime { get; set; }
 
@@ -36,7 +36,7 @@ namespace PictOgr.MVVM.SplashScreen.ViewModels
 		private void Initialize()
 		{
 			ApplicationInformation =
-				QueryBus.Process<GetApplicationInformation, ApplicationInformation>(new GetApplicationInformation());
+				QueryBus.Process<GetApplicationInformation, ApplicationInformationDto>(new GetApplicationInformation());
 
 			Logger.Info($"Start applicaiton. Version: {ApplicationInformation.Version}.");
 			Logger.Info($"Show view: {GetType().Name}.");

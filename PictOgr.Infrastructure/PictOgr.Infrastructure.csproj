@@ -38,6 +38,10 @@
       <HintPath>..\packages\Autofac.Extras.NLog.1.3.0\lib\net451\Autofac.Extras.NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="LiteDB, Version=3.1.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
       <HintPath>..\packages\LiteDB.3.1.0\lib\net35\LiteDB.dll</HintPath>
       <Private>True</Private>
@@ -57,15 +61,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoFac\Container.cs" />
-    <Compile Include="Commands\ExitApplication.cs" />
-    <Compile Include="Commands\ExitApplicationHandler.cs" />
-    <Compile Include="CoreModule.cs" />
-    <Compile Include="DatabaseModule.cs" />
+    <Compile Include="AutoFac\RepositoryModule.cs" />
+    <Compile Include="AutoFac\ServiceModule.cs" />
+    <Compile Include="Commands\ExitApplication\ExitApplication.cs" />
+    <Compile Include="Commands\ExitApplication\ExitApplicationHandler.cs" />
+    <Compile Include="AutoFac\CoreModule.cs" />
+    <Compile Include="AutoFac\DatabaseModule.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="DTO\ApplicationInformationDto.cs" />
     <Compile Include="IDatabase.cs" />
+    <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\GetApplicationInformation.cs" />
     <Compile Include="Queries\GetApplicationInformationHandler.cs" />
+    <Compile Include="Repositories\ApplicationInformationRepository.cs" />
+    <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Services\IApplicationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -80,6 +91,9 @@
       <Project>{fb3f2135-6255-4c60-ab53-2272a23ba778}</Project>
       <Name>PictOgr.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

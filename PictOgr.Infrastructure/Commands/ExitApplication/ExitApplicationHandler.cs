@@ -1,7 +1,7 @@
 ﻿using Autofac.Extras.NLog;
 using CQRS.Command;
 
-namespace PictOgr.Infrastructure.Commands
+namespace PictOgr.Infrastructure.Commands.ExitApplication
 {
 	public class ExitApplicationHandler : ICommandHandler<ExitApplication>
 	{

@@ -1,6 +1,6 @@
 ﻿using CQRS.Command;
 
-namespace PictOgr.Infrastructure.Commands
+namespace PictOgr.Infrastructure.Commands.ExitApplication
 {
 	public class ExitApplication : ICommand
 	{
