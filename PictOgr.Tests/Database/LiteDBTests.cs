@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using PictOgr.Core.AutoFac;
-using PictOgr.Database;
+using PictOgr.Infrastructure;
+using PictOgr.Infrastructure.AutoFac;
 using Shouldly;
 using Xunit;
 

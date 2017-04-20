@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr", "PictOgr\PictOgr.csproj", "{2C79F223-4F86-40B2-9822-0F9E3D1CC297}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.GUI", "PictOgr.GUI\PictOgr.GUI.csproj", "{2C79F223-4F86-40B2-9822-0F9E3D1CC297}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Tests", "PictOgr.Tests\PictOgr.Tests.csproj", "{48BF46CB-2E18-406A-8752-EF79DBCFC5EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Core", "PictOgr.Core\PictOgr.Core.csproj", "{FB3F2135-6255-4C60-AB53-2272A23BA778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Database", "PictOgr.Database\PictOgr.Database.csproj", "{27F0549B-2086-4B43-BF3E-912FE3A6247F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictOgr.Infrastructure", "PictOgr.Infrastructure\PictOgr.Infrastructure.csproj", "{27F0549B-2086-4B43-BF3E-912FE3A6247F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRS", "CQRS\CQRS\CQRS.csproj", "{D81D3626-5DAE-4502-AC2F-839E718E235C}"
 EndProject

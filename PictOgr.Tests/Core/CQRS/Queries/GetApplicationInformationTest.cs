@@ -1,11 +1,11 @@
 ﻿using CQRS.Tests;
-using PictOgr.Core.AutoFac;
+using PictOgr.Core.Domain;
+using PictOgr.Infrastructure.AutoFac;
+using PictOgr.Infrastructure.Queries;
 using Ploeh.AutoFixture;
 
 namespace PictOgr.Tests.Core.CQRS.Queries
 {
-	using PictOgr.Core.Models;
-	using PictOgr.Core.Queries;
 	using Shouldly;
 	using Xunit;
 

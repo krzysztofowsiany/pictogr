@@ -1,12 +1,12 @@
 ﻿using CQRS.Tests;
+using PictOgr.GUI.SplashScreen.Commands;
+using PictOgr.Infrastructure.AutoFac;
+using PictOgr.Infrastructure.Commands;
 
 namespace PictOgr.Tests.Core.CQRS.Commands
 {
-	using PictOgr.Core.Commands;
-	using SplashScreen.Commands;
 	using Shouldly;
 	using Xunit;
-	using PictOgr.Core.AutoFac;
 
 	public class ExitApplicationCommandTest : CommandBaseTests<ExitApplication>
 	{
