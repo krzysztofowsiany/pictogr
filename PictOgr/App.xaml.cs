@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using Autofac;
-using PictOgr.GUI.SplashScreen.Views;
 using PictOgr.Infrastructure.AutoFac;
+using PictOgr.MVVM.SplashScreen.Views;
 
-namespace PictOgr.GUI
+namespace PictOgr
 {
 	public partial class App : Application
 	{

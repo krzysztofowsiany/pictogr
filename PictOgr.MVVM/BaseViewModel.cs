@@ -5,7 +5,7 @@ using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
 using PictOgr.Core.Properties;
 
-namespace PictOgr.GUI
+namespace PictOgr.MVVM
 {
 	public class BaseViewModel : INotifyPropertyChanged
 	{

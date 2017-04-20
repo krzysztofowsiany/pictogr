@@ -1,8 +1,7 @@
 ﻿using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
-using PictOgr.Core;
 
-namespace PictOgr.GUI.MainWindow.ViewModels
+namespace PictOgr.MVVM.MainWindow.ViewModels
 {
 	public class MainWindowViewModel : BaseViewModel
 	{

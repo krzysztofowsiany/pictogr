@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows;
-using PictOgr.GUI.SplashScreen.ViewModels;
+using PictOgr.MVVM.SplashScreen.ViewModels;
 
-namespace PictOgr.GUI.SplashScreen.Views
+namespace PictOgr.MVVM.SplashScreen.Views
 {
 	public partial class SplashScreenView : Window
 	{

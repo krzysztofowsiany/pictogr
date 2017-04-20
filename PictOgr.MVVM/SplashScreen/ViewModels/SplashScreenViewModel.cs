@@ -4,10 +4,10 @@ using System.Windows.Threading;
 using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
 using PictOgr.Core.Domain;
-using PictOgr.GUI.SplashScreen.Commands;
 using PictOgr.Infrastructure.Queries;
+using PictOgr.MVVM.SplashScreen.Commands;
 
-namespace PictOgr.GUI.SplashScreen.ViewModels
+namespace PictOgr.MVVM.SplashScreen.ViewModels
 {
 	public class SplashScreenViewModel : BaseViewModel
 	{

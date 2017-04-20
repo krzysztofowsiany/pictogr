@@ -104,6 +104,10 @@
       <Project>{27f0549b-2086-4b43-bf3e-912fe3a6247f}</Project>
       <Name>PictOgr.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PictOgr.MVVM\PictOgr.MVVM.csproj">
+      <Project>{09DF6727-409D-41A0-BF15-AB911AC0E258}</Project>
+      <Name>PictOgr.MVVM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PictOgr\PictOgr.csproj">
       <Project>{2c79f223-4f86-40b2-9822-0f9e3d1cc297}</Project>
       <Name>PictOgr</Name>

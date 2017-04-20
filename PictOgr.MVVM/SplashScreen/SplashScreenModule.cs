@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using PictOgr.GUI.SplashScreen.Commands;
-using PictOgr.GUI.SplashScreen.ViewModels;
-using PictOgr.GUI.SplashScreen.Views;
+using PictOgr.MVVM.SplashScreen.Commands;
+using PictOgr.MVVM.SplashScreen.ViewModels;
+using PictOgr.MVVM.SplashScreen.Views;
 
-namespace PictOgr.GUI.SplashScreen
+namespace PictOgr.MVVM.SplashScreen
 {
 	public class SplashScreenModule : Module
 	{

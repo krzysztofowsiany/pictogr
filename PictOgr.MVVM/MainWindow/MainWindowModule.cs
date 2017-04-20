@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using PictOgr.GUI.MainWindow.ViewModels;
-using PictOgr.GUI.MainWindow.Views;
+using PictOgr.MVVM.MainWindow.ViewModels;
+using PictOgr.MVVM.MainWindow.Views;
 
-namespace PictOgr.GUI.MainWindow
+namespace PictOgr.MVVM.MainWindow
 {
 	public class MainWindowModule : Module
 	{

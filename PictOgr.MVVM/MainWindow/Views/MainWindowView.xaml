@@ -1,10 +1,10 @@
-﻿<Window x:Class="PictOgr.GUI.MainWindow.Views.MainWindowView"
+﻿<Window x:Class="PictOgr.MVVM.MainWindow.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindowView" Height="300" Width="300"
 		WindowStartupLocation="CenterScreen"
 		>
-    <Grid>
-        
-    </Grid>
+	<Grid>
+
+	</Grid>
 </Window>

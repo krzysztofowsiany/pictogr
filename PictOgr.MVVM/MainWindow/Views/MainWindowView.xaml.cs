@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace PictOgr.GUI.MainWindow.Views
+namespace PictOgr.MVVM.MainWindow.Views
 {
 	/// <summary>
 	/// Interaction logic for MainWindowView.xaml

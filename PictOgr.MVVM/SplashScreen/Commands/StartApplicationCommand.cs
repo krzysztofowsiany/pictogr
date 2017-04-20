@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
-using PictOgr.Core;
-using PictOgr.GUI.MainWindow.Views;
+using PictOgr.MVVM.MainWindow.Views;
 
-namespace PictOgr.GUI.SplashScreen.Commands
+namespace PictOgr.MVVM.SplashScreen.Commands
 {
 	public class StartApplicationCommand : ICommand
 	{

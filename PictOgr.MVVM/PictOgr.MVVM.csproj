@@ -30,14 +30,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.4.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.NLog, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Extras.NLog.1.3.0\lib\net451\Autofac.Extras.NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiteDB, Version=3.0.1.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.3.0.1\lib\net35\LiteDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.4\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="photo.exif, Version=1.1.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\photo.exif.1.1.16.0\lib\net40\photo.exif.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
@@ -56,9 +81,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="MainWindow\Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +93,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CQRS\CQRS\CQRS.csproj">
+      <Project>{D81D3626-5DAE-4502-AC2F-839E718E235C}</Project>
+      <Name>CQRS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PictOgr.Core\PictOgr.Core.csproj">
+      <Project>{FB3F2135-6255-4C60-AB53-2272A23BA778}</Project>
+      <Name>PictOgr.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PictOgr.Infrastructure\PictOgr.Infrastructure.csproj">
+      <Project>{27F0549B-2086-4B43-BF3E-912FE3A6247F}</Project>
+      <Name>PictOgr.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

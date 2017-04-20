@@ -45,10 +45,6 @@
       <HintPath>..\packages\Autofac.Extras.NLog.1.3.0\lib\net451\Autofac.Extras.NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="LiteDB, Version=3.0.1.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiteDB.3.0.1\lib\net35\LiteDB.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.4.4\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
@@ -114,17 +110,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CQRS\CQRS\CQRS.csproj">
-      <Project>{D81D3626-5DAE-4502-AC2F-839E718E235C}</Project>
-      <Name>CQRS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PictOgr.Core\PictOgr.Core.csproj">
-      <Project>{FB3F2135-6255-4C60-AB53-2272A23BA778}</Project>
-      <Name>PictOgr.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PictOgr.Infrastructure\PictOgr.Infrastructure.csproj">
       <Project>{27f0549b-2086-4b43-bf3e-912fe3a6247f}</Project>
       <Name>PictOgr.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PictOgr.MVVM\PictOgr.MVVM.csproj">
+      <Project>{09DF6727-409D-41A0-BF15-AB911AC0E258}</Project>
+      <Name>PictOgr.MVVM</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
