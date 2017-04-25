@@ -1,0 +1,9 @@
+language: csharp
+solution: PictOgr.sln
+install:
+  - nuget restore PictOgr.sln
+  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Debug
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./PictOgr.Tests/bin/Debug/PictOgr.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./PictOgr.E2E/bin/Debug/PictOgr.E2E.dll
