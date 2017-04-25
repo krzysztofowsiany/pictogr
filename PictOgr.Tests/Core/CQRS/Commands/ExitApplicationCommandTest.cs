@@ -1,6 +1,5 @@
 ﻿using CQRS.Tests;
 using PictOgr.Infrastructure.AutoFac;
-using PictOgr.Infrastructure.Commands;
 using PictOgr.Infrastructure.Commands.ExitApplication;
 using PictOgr.MVVM.SplashScreen.Commands;
 
@@ -34,7 +33,7 @@ namespace PictOgr.Tests.Core.CQRS.Commands
 		[Fact]
 		public void window_command_exit_application_should_be_handle_by_command_bus()
 		{
-			var exitApplicationCommand = new ExitApplicationCommand(commandBus, null);
+			var exitApplicationCommand = new ExitApplicationCommand(commandBus);
 
 			exitApplicationCommand.Execute(null);
 

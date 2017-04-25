@@ -67,11 +67,11 @@
     <Compile Include="Commands\ExitApplication\ExitApplicationHandler.cs" />
     <Compile Include="AutoFac\CoreModule.cs" />
     <Compile Include="AutoFac\DatabaseModule.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="Services\DatabaseService\DatabaseService.cs" />
     <Compile Include="DTO\ApplicationInformationDto.cs" />
     <Compile Include="Events\ExitApplicationEvent.cs" />
     <Compile Include="Events\ExitApplicationEventHandler.cs" />
-    <Compile Include="IDatabase.cs" />
+    <Compile Include="Services\DatabaseService\IDatabaseService.cs" />
     <Compile Include="Mappers\AutoMapperConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\ApplicationInformation\GetApplicationInformation.cs" />
