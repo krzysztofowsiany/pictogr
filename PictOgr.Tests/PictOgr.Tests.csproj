@@ -82,7 +82,11 @@
   <ItemGroup>
     <Compile Include="Core\CQRS\Commands\ExitApplicationCommandTest.cs" />
     <Compile Include="Core\CQRS\Queries\GetApplicationInformationTest.cs" />
-    <Compile Include="Database\LiteDBTests.cs" />
+    <Compile Include="Database\Customer.cs" />
+    <Compile Include="Database\CreateDatabaseServiceTest.cs" />
+    <Compile Include="Database\DeleteDatabaseTests.cs" />
+    <Compile Include="Database\InsertDatabaseTests.cs" />
+    <Compile Include="Database\FetchAllDatabaseTests.cs" />
     <Compile Include="TestsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

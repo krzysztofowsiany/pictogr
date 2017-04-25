@@ -4,13 +4,16 @@ using PictOgr.Infrastructure.Services.ApplicationService;
 
 namespace PictOgr.Infrastructure.AutoFac
 {
-	public class ServiceModule : Module
+    using PictOgr.Infrastructure.Services.DatabaseService;
+
+    public class ServiceModule : Module
 	{
 		protected override void Load(ContainerBuilder builder)
 		{
 			base.Load(builder);
 
 			builder.RegisterType<ApplicationService>().AsImplementedInterfaces();
-		}
+            builder.RegisterType<DatabaseService>().AsImplementedInterfaces();
+        }
 	}
 }
