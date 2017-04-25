@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using PictOgr.Infrastructure.Services;
+
 using PictOgr.Infrastructure.Services.ApplicationService;
 
 namespace PictOgr.Infrastructure.AutoFac

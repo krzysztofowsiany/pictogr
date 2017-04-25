@@ -1,6 +1,5 @@
 ﻿using CQRS.Query;
 using PictOgr.Infrastructure.DTO;
-using PictOgr.Infrastructure.Services;
 using PictOgr.Infrastructure.Services.ApplicationService;
 
 namespace PictOgr.Infrastructure.Queries.ApplicationInformation
