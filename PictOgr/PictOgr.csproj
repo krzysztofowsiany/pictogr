@@ -114,6 +114,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PictOgr.Core\PictOgr.Core.csproj">
+      <Project>{FB3F2135-6255-4C60-AB53-2272A23BA778}</Project>
+      <Name>PictOgr.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PictOgr.Infrastructure\PictOgr.Infrastructure.csproj">
       <Project>{27f0549b-2086-4b43-bf3e-912fe3a6247f}</Project>
       <Name>PictOgr.Infrastructure</Name>

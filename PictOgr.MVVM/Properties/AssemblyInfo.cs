@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using PictOgr.Core.Properties;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -33,9 +33,9 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 #if DEBUG
-[assembly: AssemblyVersion("0.1.0.*")]
-[assembly: AssemblyFileVersion("0.1.0.*")]
+[assembly: AssemblyVersion(ApplicationVersion.Debug.Version)]
+[assembly: AssemblyFileVersion(ApplicationVersion.Debug.FileVersion)]
 #else
-[assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.0")]
+[assembly: AssemblyVersion(ApplicationVersion.Stable.Version)]
+[assembly: AssemblyFileVersion(ApplicationVersion.Stable.FileVersion)]
 #endif
