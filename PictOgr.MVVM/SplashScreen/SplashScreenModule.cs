@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using PictOgr.MVVM.Base;
 using PictOgr.MVVM.SplashScreen.Commands;
 using PictOgr.MVVM.SplashScreen.ViewModels;
 using PictOgr.MVVM.SplashScreen.Views;

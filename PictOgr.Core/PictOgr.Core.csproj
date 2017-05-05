@@ -60,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\ApplicationInformation.cs" />
+    <Compile Include="Domain\CompositionName.cs" />
+    <Compile Include="Domain\ModuleType.cs" />
+    <Compile Include="Domain\NameModule.cs" />
     <Compile Include="Properties\ApplicationVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IApplicationInformationRepository.cs" />

@@ -4,6 +4,13 @@
         Title="PictOgr" Height="200" Width="400"
 		WindowStartupLocation="CenterScreen"
 		>
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../../Style/Style.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="*"/>
@@ -15,8 +22,8 @@
 			<Button Name="History">History</Button>
 		</StackPanel>
 		<StackPanel Grid.Row ="1" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button Name="Configuration" Width="50" Command="{Binding ConfigurationCommand}">#</Button>
-			<Button Name="Exit" Width="50">Exit</Button>
+			<Button Name="Configuration" Width="45" Command="{Binding ConfigurationCommand}" Style="{StaticResource myStyle}">Conf</Button>
+			<Button Name="Exit" Width="45" Command="{Binding ExitApplicationCommand}" Style="{StaticResource myStyle}">Exit</Button>
 		</StackPanel>
 	</Grid>
 </Window>

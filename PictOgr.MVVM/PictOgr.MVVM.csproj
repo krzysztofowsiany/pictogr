@@ -73,6 +73,7 @@
       <DependentUpon>ConfigurationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow\Commands\ConfigurationCommand.cs" />
+    <Compile Include="MainWindow\Commands\CloseCommand.cs" />
     <Compile Include="MainWindow\MainWindowModule.cs" />
     <Compile Include="MainWindow\ViewModels\MainWindowViewModel.cs" />
     <Compile Include="MainWindow\Views\MainWindowView.xaml.cs">
@@ -80,7 +81,7 @@
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SplashScreen\Commands\ExitApplicationCommand.cs" />
+    <Compile Include="Base\ExitApplicationCommand.cs" />
     <Compile Include="SplashScreen\Commands\StartApplicationCommand.cs" />
     <Compile Include="SplashScreen\SplashScreenModule.cs" />
     <Compile Include="SplashScreen\ViewModels\SplashScreenViewModel.cs" />

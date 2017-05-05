@@ -1,7 +1,7 @@
 ﻿using CQRS.Tests;
 using PictOgr.Infrastructure.AutoFac;
 using PictOgr.Infrastructure.Commands.ExitApplication;
-using PictOgr.MVVM.SplashScreen.Commands;
+using PictOgr.MVVM.Base;
 
 namespace PictOgr.Tests.Core.CQRS.Commands
 {

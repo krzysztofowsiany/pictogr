@@ -3,7 +3,7 @@ using System.Windows.Input;
 using CQRS.Bus.Command;
 using PictOgr.Infrastructure.Commands.ExitApplication;
 
-namespace PictOgr.MVVM.SplashScreen.Commands
+namespace PictOgr.MVVM.Base
 {
 	public class ExitApplicationCommand : ICommand
 	{
