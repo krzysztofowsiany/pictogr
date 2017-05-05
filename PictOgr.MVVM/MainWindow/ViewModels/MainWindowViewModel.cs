@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
+using PictOgr.MVVM.Base;
 using PictOgr.MVVM.MainWindow.Commands;
 
 namespace PictOgr.MVVM.MainWindow.ViewModels

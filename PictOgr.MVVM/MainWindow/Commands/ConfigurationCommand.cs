@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using PictOgr.MVVM.Base;
 using PictOgr.MVVM.Configuration.Views;
 
 namespace PictOgr.MVVM.MainWindow.Commands

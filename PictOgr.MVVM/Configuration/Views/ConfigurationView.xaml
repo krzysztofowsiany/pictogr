@@ -14,40 +14,49 @@
 				</StackPanel>
 			</TabItem>
 			<TabItem Header="Formats">
-				<StackPanel>
+				<StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
 					<Label Content="Content goes here..." />
 					<Grid>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="1*" ></ColumnDefinition>
+							<ColumnDefinition Width="3*" ></ColumnDefinition>
 							<ColumnDefinition Width="1*" ></ColumnDefinition>
 						</Grid.ColumnDefinitions>
 						<StackPanel Grid.Column="0">
 							<Label Content="32"></Label>
+							<ListBox>
+								<ListBoxItem Content="sdf"/>
+								<ListBoxItem Content="sdf"/>
+							</ListBox>
 						</StackPanel>
 						<StackPanel Grid.Column="1">
-							<Label Content="Name modules"></Label>
-							<Expander Header="Base">
-								<Button Content="/"></Button>
-								
+							<Label Content="Just click to add name module"></Label>
+							<Expander Header="Base" IsExpanded="True">
+								<StackPanel>
+									<Button Content="/" Command="{Binding AddNameModuleCommand}" CommandParameter="/"/>
+									<Button Content="-" Command="{Binding AddNameModuleCommand}" CommandParameter="-"/>
+									<Button Content="_" Command="{Binding AddNameModuleCommand}" CommandParameter="_"/>
+								</StackPanel>
 							</Expander>
 							<Expander Header="EXIF">
 
 
 							</Expander>
 						</StackPanel>
-						
+
 					</Grid>
 					<StackPanel>
-						
+						<Label Content="Path format" />
+						<Label Content="{Binding PathFormat}"/>
+						<Label Content="Example path" />
 					</StackPanel>
 				</StackPanel>
 			</TabItem>
 			<TabItem Header="Schedule" >
-					<StackPanel>
-						<Label Content="Content goes here..." />
-						<CheckBox>Start with Windows</CheckBox>
-						<CheckBox>Integrate with menu</CheckBox>
-					</StackPanel>
+				<StackPanel>
+					<Label Content="Content goes here..." />
+					<CheckBox>Start with Windows</CheckBox>
+					<CheckBox>Integrate with menu</CheckBox>
+				</StackPanel>
 			</TabItem>
 		</TabControl>
 	</StackPanel>

@@ -5,6 +5,7 @@ using Autofac.Extras.NLog;
 using CQRS.Bus.Query;
 using PictOgr.Infrastructure.DTO;
 using PictOgr.Infrastructure.Queries.ApplicationInformation;
+using PictOgr.MVVM.Base;
 using PictOgr.MVVM.SplashScreen.Commands;
 
 namespace PictOgr.MVVM.SplashScreen.ViewModels

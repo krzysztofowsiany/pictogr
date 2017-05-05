@@ -1,21 +1,22 @@
 ﻿using System.Windows;
 using CQRS.Bus.Event;
 using PictOgr.Infrastructure.Events;
+using PictOgr.MVVM.Configuration.ViewModels;
 
 namespace PictOgr.MVVM.Configuration.Views
 {
-	/// <summary>
-	/// Interaction logic for MainWindowView.xaml
-	/// </summary>
 	public partial class ConfigurationView : Window
 	{
-		public ConfigurationView(IEventBus eventBus)
+		public ConfigurationView(ConfigurationViewModel configurationViewModel, IEventBus eventBus)
 		{
-			InitializeComponent();
+			DataContext = configurationViewModel;
+
 			eventBus.Register(new ExitApplicationEventHandler(() =>
 			{
 				Close();
 			}));
+
+			InitializeComponent();
 		}
 	}
 }

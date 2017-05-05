@@ -65,7 +65,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Base\BaseViewModel.cs" />
+    <Compile Include="Base\RelayCommand.cs" />
     <Compile Include="Configuration\ConfigurationModule.cs" />
     <Compile Include="Configuration\ViewModels\ConfigurationViewModel.cs" />
     <Compile Include="Configuration\Views\ConfigurationView.xaml.cs">
@@ -123,9 +124,7 @@
       <Name>PictOgr.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuration\Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

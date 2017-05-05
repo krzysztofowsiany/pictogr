@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using PictOgr.MVVM.Base;
 using PictOgr.MVVM.MainWindow.Views;
 
 namespace PictOgr.MVVM.SplashScreen.Commands
