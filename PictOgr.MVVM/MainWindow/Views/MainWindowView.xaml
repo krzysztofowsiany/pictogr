@@ -1,7 +1,7 @@
 ﻿<Window x:Class="PictOgr.MVVM.MainWindow.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="PictOgr" Height="200" Width="300"
+        Title="PictOgr" Height="200" Width="400"
 		WindowStartupLocation="CenterScreen"
 		>
 	<Grid>
@@ -15,7 +15,7 @@
 			<Button Name="History">History</Button>
 		</StackPanel>
 		<StackPanel Grid.Row ="1" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button Name="Configuration" Width="50">#</Button>
+			<Button Name="Configuration" Width="50" Command="{Binding ConfigurationCommand}">#</Button>
 			<Button Name="Exit" Width="50">Exit</Button>
 		</StackPanel>
 	</Grid>

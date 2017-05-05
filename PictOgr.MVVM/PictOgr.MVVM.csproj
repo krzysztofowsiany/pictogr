@@ -66,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Configuration\ConfigurationModule.cs" />
+    <Compile Include="Configuration\ViewModels\ConfigurationViewModel.cs" />
+    <Compile Include="Configuration\Views\ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\Commands\ConfigurationCommand.cs" />
     <Compile Include="MainWindow\MainWindowModule.cs" />
     <Compile Include="MainWindow\ViewModels\MainWindowViewModel.cs" />
     <Compile Include="MainWindow\Views\MainWindowView.xaml.cs">
@@ -82,6 +88,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Configuration\Views\ConfigurationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow\Views\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +122,9 @@
       <Project>{27F0549B-2086-4B43-BF3E-912FE3A6247F}</Project>
       <Name>PictOgr.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

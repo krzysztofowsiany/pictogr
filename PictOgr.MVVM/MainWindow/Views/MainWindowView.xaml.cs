@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using CQRS.Bus.Event;
 using PictOgr.Infrastructure.Events;
+using PictOgr.MVVM.MainWindow.ViewModels;
 
 namespace PictOgr.MVVM.MainWindow.Views
 {
@@ -9,13 +10,16 @@ namespace PictOgr.MVVM.MainWindow.Views
 	/// </summary>
 	public partial class MainWindowView : Window
 	{
-		public MainWindowView(IEventBus eventBus)
+		public MainWindowView(MainWindowViewModel mainWindowView, IEventBus eventBus)
 		{
-			InitializeComponent();
+			DataContext = mainWindowView;
+
 			eventBus.Register(new ExitApplicationEventHandler(() =>
 			{
 				Close();
 			}));
+
+			InitializeComponent();
 		}
 	}
 }

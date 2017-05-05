@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using PictOgr.MVVM.MainWindow.Commands;
 using PictOgr.MVVM.MainWindow.ViewModels;
 using PictOgr.MVVM.MainWindow.Views;
 
@@ -10,6 +11,7 @@ namespace PictOgr.MVVM.MainWindow
 		{
 			builder.RegisterType<MainWindowViewModel>();
 			builder.RegisterType<MainWindowView>();
+			builder.RegisterType<ConfigurationCommand>();
 		}
 	}
 }

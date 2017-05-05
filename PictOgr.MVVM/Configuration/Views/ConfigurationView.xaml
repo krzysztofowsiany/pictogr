@@ -1,0 +1,54 @@
+﻿<Window x:Class="PictOgr.MVVM.Configuration.Views.ConfigurationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PictOgr - configuration" Height="400" Width="700"
+		WindowStartupLocation="CenterScreen"
+		>
+	<StackPanel>
+		<TabControl>
+			<TabItem Header="General">
+				<StackPanel>
+					<Label Content="Content goes here..." />
+					<CheckBox>Start with Windows</CheckBox>
+					<CheckBox>Integrate with menu</CheckBox>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Formats">
+				<StackPanel>
+					<Label Content="Content goes here..." />
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*" ></ColumnDefinition>
+							<ColumnDefinition Width="1*" ></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<StackPanel Grid.Column="0">
+							<Label Content="32"></Label>
+						</StackPanel>
+						<StackPanel Grid.Column="1">
+							<Label Content="Name modules"></Label>
+							<Expander Header="Base">
+								<Button Content="/"></Button>
+								
+							</Expander>
+							<Expander Header="EXIF">
+
+
+							</Expander>
+						</StackPanel>
+						
+					</Grid>
+					<StackPanel>
+						
+					</StackPanel>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Schedule" >
+					<StackPanel>
+						<Label Content="Content goes here..." />
+						<CheckBox>Start with Windows</CheckBox>
+						<CheckBox>Integrate with menu</CheckBox>
+					</StackPanel>
+			</TabItem>
+		</TabControl>
+	</StackPanel>
+</Window>
