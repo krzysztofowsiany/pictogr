@@ -10,9 +10,33 @@ namespace PictOgr.Core.Domain
 
 		public NameModule(string name, Guid nameModuleId, ModuleType moduleType)
 		{
+			SetModuleType(moduleType);
+			SetName(name);
+			SetModuleId(nameModuleId);
+
 			ModuleType = moduleType;
 			Name = name;
 			NameModuleId = nameModuleId;
+		}
+
+		private void SetModuleId(Guid nameModuleId)
+		{
+			NameModuleId = nameModuleId;
+		}
+
+		private void SetName(string name)
+		{
+			if (string.IsNullOrWhiteSpace(name))
+			{
+				throw new Exception("Name must be set.");
+			}
+
+			Name = name;
+		}
+
+		private void SetModuleType(ModuleType moduleType)
+		{
+			ModuleType = moduleType;
 		}
 	}
 }
