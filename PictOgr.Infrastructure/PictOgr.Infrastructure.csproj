@@ -66,6 +66,8 @@
     <Compile Include="Commands\ExitApplication\ExitApplication.cs" />
     <Compile Include="Commands\ExitApplication\ExitApplicationHandler.cs" />
     <Compile Include="AutoFac\CoreModule.cs" />
+    <Compile Include="DTO\CompositionNameDto.cs" />
+    <Compile Include="DTO\NameModuleDto.cs" />
     <Compile Include="Services\DatabaseService\DatabaseService.cs" />
     <Compile Include="DTO\ApplicationInformationDto.cs" />
     <Compile Include="Events\ExitApplicationEvent.cs" />
