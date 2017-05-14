@@ -13,7 +13,7 @@ namespace PictOgr.Tests.Core.CQRS.Commands
 		private readonly int expectedValue = 123;
 		private int exitCode;
 
-		public ExitApplicationCommandTest():base(Container.CreateBuilder())
+		public ExitApplicationCommandTest() : base(Container.CreateBuilder())
 		{
 			handleMethod = command =>
 			{

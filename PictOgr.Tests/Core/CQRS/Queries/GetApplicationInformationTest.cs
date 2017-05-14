@@ -21,15 +21,15 @@ namespace PictOgr.Tests.Core.CQRS.Queries
 		[Fact]
 		public void get_application_version_should_return_the_random_string()
 		{
-            //arragne
+			//arragne
 			var version = fixture.Create<string>();
-		    var applicationInformationDto = new ApplicationInformationDto { Version = version };
-		    handleMethod = () => applicationInformationDto;
+			var applicationInformationDto = new ApplicationInformationDto { Version = version };
+			handleMethod = () => applicationInformationDto;
 
-            //act
+			//act
 			var applicationInformation = queryBus.Process<GetApplicationInformation, ApplicationInformationDto>(new GetApplicationInformation());
 
-            //assert
+			//assert
 			applicationInformation.Version.ShouldBe(version);
 		}
 	}

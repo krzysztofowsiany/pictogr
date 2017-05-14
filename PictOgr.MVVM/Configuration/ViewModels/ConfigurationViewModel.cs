@@ -33,7 +33,6 @@ namespace PictOgr.MVVM.Configuration.ViewModels
 			var nameModule = parameter.ToString();
 
 			PathFormat += nameModule;
-
 		}
 	}
 }
